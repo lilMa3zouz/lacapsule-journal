@@ -1,0 +1,123 @@
+
+#header{
+    width: 100%;
+    box-shadow: -1px 5px 20px black;
+    height: auto;
+    overflow: visible
+}
+#page{
+    position: absolute;
+    top: 0;bottom: 0;left: 0;right: 0;
+    font-family: "Patrick Hand SC", cursive;
+    overflow-x: hidden;
+    height: 500%;
+    width: 100%;
+
+}
+#topBar{
+    z-index: 1100;
+    position: absolute;
+    left: 0;
+    top: 5px;
+
+}
+.nav-link{
+    align-self: center;
+    background: transparent;
+    border: solid 3px black;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    
+}
+.nav-link:hover{
+    box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);
+    color: black;
+    transform: scale(1.1);
+}
+.nav-link:active{
+    transform: scale(0.9);
+}
+#navBar{
+    margin-left: 15%;
+    margin-right: 15%;
+    height: auto;
+}
+#imgHeader{
+    position: absolute;
+    z-index: 2000;
+    left: -1000%;
+    right: -1000%;
+    margin: auto;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+#stickyheader{
+    background-color: #ededed;
+    width: 100%;
+    z-index: 3000;
+    height: 20%;
+    position: fixed;
+    box-shadow: 0px 3px 20px black;
+}
+.nosticky{
+    visibility: hidden;
+}
+.sticky{
+    animation-fill-mode: forwards;
+    animation: sticky 500ms;
+}
+@keyframes sticky{
+    From{
+        opacity: 0.0;
+        top: -23%
+    }
+    To{
+        opacity: 1.0;
+        top: 0;
+    }
+}
+#fakeHeader{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.arrow{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    margin-top: -20px;
+    align-self: center;
+    background: transparent;
+    border: solid 3px black;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    outline: none  ;
+    color: black;
+    box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.arrow:hover{
+    box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3);
+    color: black;
+    transform: scale(1.1);
+}
+.arrow:active{
+    transform: scale(0.9);
+}
+#arrowLeft{
+        left: 20px;
+}
+#arrowRight{
+        right: 20px;
+}
+#content{
+    background-color: #ededed;
+
+}
