@@ -61,35 +61,54 @@ function header(){
   )
 }
 
-
-function App() {
-  return (
-    <div id="page" onScroll={scrollFun}>
-      {header()}
-      <div id="content">
-      <div id="lastCarousel" className="container">
+function lastCarousel() {
+  return(
+    <div id="lastCarousel" className="container">
       <h1>Derniers numéros</h1>
+      <hr></hr>
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <p style={{textAlign:"center",width:"100%"}}><img src="https://zupimages.net/up/20/47/ziw3.png" width="40%" alt="First slide" /></p>
+            <p style={{textAlign:"center",width:"100%"}}>
+              <h3>n°1 - titre du numéro</h3>
+              <h5>petite info complémentaire</h5>
+
+              <img src="https://zupimages.net/up/20/47/ziw3.png" width="35%" alt="First slide" />
+            </p>
           </div>
           <div className="carousel-item">
-          <p style={{textAlign:"center",width:"100%"}}><img src="https://zupimages.net/up/20/47/vx8b.png" width="40%" alt="Second slide" /></p>
+          <p style={{textAlign:"center",width:"100%"}}>
+            <h3>n°2 - titre du numéro</h3>
+            <h5>petite info complémentaire</h5>
+            <img src="https://zupimages.net/up/20/47/vx8b.png" width="35%" alt="Second slide" />
+          </p>
           </div>
           <div className="carousel-item">
-          <p style={{textAlign:"center",width:"100%"}}><img src="https://zupimages.net/up/20/47/gia5.png" width="40%" alt="Third slide" /></p>
+          <p style={{textAlign:"center",width:"100%"}}>
+            <h3>n°3 - titre du numéro</h3>
+            <h5>petite info complémentaire</h5>
+
+            <img src="https://zupimages.net/up/20/47/gia5.png" width="35%" alt="Third slide" />
+          </p>
           </div>
         </div>
         <a id="prev" className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <img src={angleLeft} alt="prev"/>
+          <img src={angleLeft} className="controls" alt="prev"/>
         </a>
         <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <img src={angleRight} alt="Next"/>
-
+        <img src={angleRight} className="controls" alt="Next"/>
         </a>
         </div>
       </div>
+  )
+}
+
+function App() {
+  return (
+    <div id="page"  onScroll={scrollFun}>
+      {header()}
+      <div id="content" style={{width:"100%"}}>
+          {lastCarousel()}
       </div>
     </div>
   );
