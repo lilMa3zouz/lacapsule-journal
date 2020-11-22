@@ -3,10 +3,12 @@ import banner from './img/capsule2.png';
 import titre from './img/titreHeader.svg'
 import angleRight from './img/angle-right.svg'
 import angleLeft from './img/angle-left.svg'
+import motCroisé from './publication/motcroisé.jpg'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
 import './css/animate.min.css'
 import './css/index.css';
+import './css/laptop.css';
 import './script.js'
 import * as $ from 'jquery';
 require('bootstrap')
@@ -64,31 +66,28 @@ function header(){
 function lastCarousel() {
   return(
     <div id="lastCarousel" className="container">
-      <h1>Derniers numéros</h1>
-      <hr></hr>
       <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <p style={{textAlign:"center",width:"100%"}}>
-              <h3>n°1 - titre du numéro</h3>
-              <h5>petite info complémentaire</h5>
-
-              <img src="https://zupimages.net/up/20/47/ziw3.png" width="35%" alt="First slide" />
+            <h1>n°1 - titre du numéro</h1>
+            <hr></hr>
+            <p>
+              <img className="cover" src="https://zupimages.net/up/20/47/ziw3.png"  alt="First slide" />
             </p>
           </div>
           <div className="carousel-item">
-          <p style={{textAlign:"center",width:"100%"}}>
-            <h3>n°2 - titre du numéro</h3>
-            <h5>petite info complémentaire</h5>
-            <img src="https://zupimages.net/up/20/47/vx8b.png" width="35%" alt="Second slide" />
+          <h1>n°2 - titre du numéro</h1>       
+          <hr></hr>
+
+          <p>
+            <img className="cover" src="https://zupimages.net/up/20/47/vx8b.png" alt="Second slide" />
           </p>
           </div>
           <div className="carousel-item">
-          <p style={{textAlign:"center",width:"100%"}}>
-            <h3>n°3 - titre du numéro</h3>
-            <h5>petite info complémentaire</h5>
-
-            <img src="https://zupimages.net/up/20/47/gia5.png" width="35%" alt="Third slide" />
+          <h1>n°3 - titre du numéro</h1>
+          <hr></hr>
+          <p>
+            <img className="cover" src="https://zupimages.net/up/20/47/gia5.png" alt="Third slide" />
           </p>
           </div>
         </div>
@@ -108,6 +107,9 @@ function App() {
     <div id="page"  onScroll={scrollFun}>
       {header()}
       <div id="content" style={{width:"100%"}}>
+          <div className="container article">
+          <img alt="mot-croisé" src={motCroisé}></img>
+          </div>
           {lastCarousel()}
       </div>
     </div>
