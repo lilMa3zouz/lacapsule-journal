@@ -65,40 +65,10 @@ function header(){
 
 function lastCarousel() {
   return(
-    <div id="lastCarousel" className="container">
-      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <h1>n°1 - titre du numéro</h1>
-            <hr></hr>
-            <p>
-              <img className="cover" src="https://zupimages.net/up/20/47/ziw3.png"  alt="First slide" />
-            </p>
-          </div>
-          <div className="carousel-item">
-          <h1>n°2 - titre du numéro</h1>       
-          <hr></hr>
 
-          <p>
-            <img className="cover" src="https://zupimages.net/up/20/47/vx8b.png" alt="Second slide" />
-          </p>
-          </div>
-          <div className="carousel-item">
-          <h1>n°3 - titre du numéro</h1>
-          <hr></hr>
-          <p>
-            <img className="cover" src="https://zupimages.net/up/20/47/gia5.png" alt="Third slide" />
-          </p>
-          </div>
-        </div>
-        <a id="prev" className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <img src={angleLeft} className="controls" alt="prev"/>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <img src={angleRight} className="controls" alt="Next"/>
-        </a>
-        </div>
-      </div>
+    <div id="lastCarousel">
+      <button id="carouselTrigger" class="material-icons" >keyboard_arrow_right</button>
+    </div>
   )
 }
 
@@ -107,10 +77,9 @@ function App() {
     <div id="page"  onScroll={scrollFun}>
       {header()}
       <div id="content" style={{width:"100%"}}>
-          <div className="container article">
-          <img alt="mot-croisé" src={motCroisé}></img>
-          </div>
           {lastCarousel()}
+          <div className="container article" style={{backgroundImage: "url("+motCroisé+")"}}>
+          </div>
       </div>
     </div>
   );
