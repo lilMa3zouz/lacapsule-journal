@@ -474,7 +474,7 @@ kbd {
     padding: 0.2rem 0.4rem;
     font-size: 87.5%;
     color: #fff;
-    background-color: #212529;
+    background-color:  #212529;
     border-radius: 0.2rem;
 }
 kbd kbd {
@@ -500,7 +500,7 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: auto; 
 }
 .container-fluid {
     width: 100%;

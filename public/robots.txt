@@ -52,4 +52,4 @@ if (window.pageYOffset >= document.getElementById("content").offsetTop){
         <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
         <img src={angleRight} className="controls" alt="Next"/>
         </a>
-        </div>
+</div>
