@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fluentui/react": "^7.153.2",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1",
+    "office-ui-fabric-core": "^11.0.0",
     "pdf-to-png": "^1.0.3",
     "pdf2pic": "^2.1.2",
     "popper.js": "^1.16.1",

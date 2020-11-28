@@ -497,8 +497,6 @@ pre code {
     overflow-y: scroll;
 }
 .container {
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto; 
 }
@@ -598,8 +596,6 @@ pre code {
     position: relative;
     width: 100%;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
 }
 .col {
     -ms-flex-preferred-size: 0;
@@ -5406,8 +5402,8 @@ button.close {
 .carousel-control-prev {
     position: absolute;
     background-color: white;
-    height: 98%;
-    top: 1%;
+    top: 3%;
+    bottom: 3%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5420,10 +5416,6 @@ button.close {
     outline: 0;
     width: 15%;
     text-align: center;
-}
-.carousel-control-next:hover,
-.carousel-control-prev:hover {
-    transform: scale(1.05);
 }
 .carousel-control-next:active,
 .carousel-control-prev:active {
