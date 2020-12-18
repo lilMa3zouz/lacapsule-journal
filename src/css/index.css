@@ -57,8 +57,11 @@ p,h1,h5{
     text-align: left;
 }
 .articleTitle{
-    margin-top: -20px;
     font-size: 20px;
+    color: black;
+}
+.articleTitle:hover{
+    text-decoration: underline black;
 }
 .bonus{
     margin-left: 15px;

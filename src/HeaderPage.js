@@ -7,6 +7,7 @@ import './css/header.css';
 import React from 'react';
 import * as $ from 'jquery';
 
+
 class HeaderPage extends React.Component {
     scrollArrow(){
         var getOffset = $('#navBar').offset().top;

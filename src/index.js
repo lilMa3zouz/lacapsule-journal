@@ -1,14 +1,32 @@
+import {BrowserRouter, Route, Switch, HashRouter } from "react-router-dom"
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Home from './Home';
+import Blog from './blog'
 import reportWebVitals from './reportWebVitals';
 import './css/materialIcons.css';
 
+function blog(){
+    return(
+    <div>
+        pute pute pute
+    </div>
+    )
+}
+
+const Root = ()=>{
+return( 
+  <BrowserRouter>
+      <Switch>
+        <Route strict pattern="/index/" component={Home} />
+        <Route strict pattern="/blog/" component={blog} />  
+      </Switch>
+  </BrowserRouter>
+)
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Root />,
   document.getElementById('root')
 );
 

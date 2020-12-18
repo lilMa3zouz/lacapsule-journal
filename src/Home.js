@@ -2,11 +2,13 @@ import { getTheme } from '@fluentui/react';
 import angleRight from './img/angle-right.svg'// eslint-disable-next-line
 import angleLeft from './img/angle-left.svg'// eslint-disable-next-line
 import motCroisé from './publication/motcroisé.jpg'
+import './css/bootstrap.min.css';
 import './css/index.css';
 import './css/laptop.css';
 import './script.js'
 import * as $ from 'jquery';
 import HeaderPage from './HeaderPage'
+import React from 'react';
 require('bootstrap')
 const theme = getTheme();
 
@@ -68,55 +70,51 @@ function article(img,category,title){
       <img class="articleImg" src={img} alt="article img" width="100%"/>
       <div class="articleBody">
         <p class="category">{category}</p>
-        <a href={href}><p class="articleTitle">{title}</p></a>
+        <a href={href}><p className="articleTitle">{title}</p></a>
       </div>
     </div>
   )
 }
 
-function App() {
-  return (
+function bonus(title,img){
+  var src="./" + img
+  return(
+    <div class="bonus">
+      <p class="bonusBody">
+        <img src={src} alt="" class="bonusImg"></img>
+        {title}
+      </p>
+    </div>
+  )
+}
+
+class Home extends React.Component{
+render(){
+    return(
     <div id="page"  onScroll={scrollFun}>
       <HeaderPage></HeaderPage>
       <div id="content" class="container row">
           <div className="col-sm">
-          {lastCarousel()}
-          <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
-          {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-          {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
-          {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
-          </div>
+            {lastCarousel()}
+            <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
+              {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
+              {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+              {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+            </div>
           </div>
           <div id="bonusBar" className="component col-mb-auto " style={{boxShadow: theme.effects.elevation8}}>
             <h1 style={{width:"100%",borderBottom: "3px solid black",marginTop:"15px", paddingBottom:"15px"}}>Bonus</h1>
-            <div class="bonus">
-              <p class="bonusBody">
-                <img src="./" alt="" class="bonusImg"></img>
-                3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne
-              </p>
-            </div>
-            <div class="bonus">
-              <p class="bonusBody">
-                <img src="./" alt="" class="bonusImg"></img>
-                Texte + Audio <br />
-                Au fond de la pénômnre
-                Kaïto Bernhart
-              </p>
-            </div>
-            <div class="bonus">
-              <p class="bonusBody">
-                <img src="./" alt="" class="bonusImg"></img>
-                3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne
-              </p>
-            </div>
+            {bonus("3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne","")}
+            {bonus("Lorem ipsum dolor sit amet, consectetur adipiscing elit","")}
+            {bonus("Lorem ipsum dolor sit amet, consectetur adipiscing elit","")}
           </div>
       </div>
-
     </div>
-  );
+    )
+}
 }
 
-export default App;
+export default Home;
 
 /* 
 {lastCarousel()}
