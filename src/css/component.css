@@ -6,29 +6,14 @@
     width: 100%;
     background-color: #FAFAFA;
 }
-.component{
-    border-radius: 1px;
-    background-color: white;
-}
-
 #content{
     z-index: 900;
     font-size: 40px;
     height: 200%;
     margin: auto;
     margin-top: 70px;
-    max-width: 1200px;
-}
-.cover{
-    width: 35%;
-}
-
-.controls{
-    width: 60px;
-}
-p,h1,h5{
-    width: 100%;
-    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 .article{
     margin-left: 20px;
@@ -37,18 +22,12 @@ p,h1,h5{
     margin-top: 0;
     margin-left: 0;
 }
-#lastNumberCarousel{
-    background-color: white;
-    width: 98%;
-    padding: 15px;
-}
-#bonusBar{
-    width: 29%;
-}
+
 .articleBody{
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .category{
     font-size: 20px;
     text-decoration: underline;
@@ -62,24 +41,4 @@ p,h1,h5{
 }
 .articleTitle:hover{
     text-decoration: underline black;
-}
-.bonus{
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-right: 15px;
-
-    border-top: 1px solid grey;
-}
-.bonusBody{
-    margin-top: 10px;
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
-
-}
-.bonusImg{
-    float: left;
-    width: 30%;
-    height: 100px;
-    border: 1px solid grey;
 }

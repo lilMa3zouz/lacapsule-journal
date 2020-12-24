@@ -1,0 +1,35 @@
+#content2{
+    z-index: 900;
+    font-size: 40px;
+    height: 200%;
+    margin: auto;
+    margin-top: 70px;
+    max-width: none
+}
+#announcer{
+    background-color: #EDEDED;
+    height: 25%;
+    width: 100%;
+    margin-top: -70px;
+    margin-left: 0;
+    margin-right: 0;
+}
+#archiveList{
+    margin: auto;
+    height: 100%;
+    background-color: white;
+    padding-top: 40px;
+    box-shadow: 0px 1px 5px black;
+
+}
+#archiveInner{
+    text-align: center;
+    margin: auto;
+    max-width: 1200px;
+    
+}
+.preview{
+    width: 300px;
+    margin-right: 30px;
+    box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+}

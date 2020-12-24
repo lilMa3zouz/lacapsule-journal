@@ -3,9 +3,9 @@ import angleRight from './img/angle-right.svg'// eslint-disable-next-line
 import angleLeft from './img/angle-left.svg'// eslint-disable-next-line
 import motCroisé from './publication/motcroisé.jpg'
 import './css/bootstrap.min.css';
-import './css/index.css';
+import './css/component.css';
+import './css/Home.css';
 import './css/laptop.css';
-import './script.js'
 import * as $ from 'jquery';
 import HeaderPage from './HeaderPage'
 import React from 'react';
@@ -89,6 +89,9 @@ function bonus(title,img){
 }
 
 class Home extends React.Component{
+  componentDidMount(){
+    document.title = "La Capsule"
+  }
 render(){
     return(
     <div id="page"  onScroll={scrollFun}>

@@ -27,10 +27,10 @@ class HeaderPage extends React.Component {
       <ul id="navBar" className="nav justify-content-between">
       <button id="arrowLeft" className="arrow material-icons" onClick={this.scrollArrow} >arrow_downward</button>
           <li className="nav-item">
-            <a className="nav-link" href="www.youtube.com">Archives</a>
+            <a className="nav-link" href="/archives">Archives</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="www.youtube.com">blog</a>
+            <a className="nav-link" href="/blog">blog</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="www.youtube.com">présentation</a>

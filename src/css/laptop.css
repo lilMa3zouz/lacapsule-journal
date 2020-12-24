@@ -15,11 +15,21 @@
     margin-top: -12px;
     }
     #content{
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 25px;
+        margin-right: 25px;
     }
     #lastCarousel{
         margin-right: 100px;
         height: 15%;
     }
+    #archiveInner{
+        margin-left: 25px;
+        margin-right: 25px;
+        
+    }
+    .preview{
+        width: 20px;
+        border: 5px solid rebeccapurple;
+    }
+
 }
