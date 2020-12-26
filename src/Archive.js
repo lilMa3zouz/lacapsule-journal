@@ -32,28 +32,45 @@ function scrollFun(){
   
 class Archive extends React.Component{
     state = {
-        announcerDate: "",
-        announcerContent : "",
-    }
+        announcerDate: "n° Pilote",
+        announcerContent : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        announcerCover: pilote,
+      }
     componentDidMount(){
         document.title = "La Capsule - Archives"
-        console.log(theme.effects.elevation16)
+
       }
     render(){
         return(
             <div id="page"  onScroll={scrollFun}>
             <HeaderPage></HeaderPage>
-            <div id="content2" class="container">
-                <div id="announcer" >fefef</div>
+            <div id="content2" className="container">
+                <div id="announcer" className="container row">
+                  <p id="announcerContent">
+                    <img src={this.state.announcerCover} alt="announcerCover" id="announcerCover" />
+                      <span id="announcerDate">{this.state.announcerDate}</span><br />
+                      <span id="sommaire">
+                        Sommaire <br />
+                      </span>
+                  </p>
+                </div>
                 <div id="archiveList" >
                     <div id="archiveInner">
                         <hr />
                         <p style={{marginTop: -45,fontSize: 35,width: '100%',textAlign:'center'}}><span style={{backgroundColor: 'white',color:'grey'}}>les dernières éditions de la capsule</span></p>
-                        <div className="row">
-                            <img className='preview' src={pilote} alt="numéro pilote"/> 
-                            <img className='preview' src={octobre} alt="numéro octobre"/> 
-                            <img className='preview' src={novembre} alt="numéro novembre"/> 
-
+                        <div className="row" style={{margin: 'auto',width: '80%'}}>
+                            <div className="col-sm">
+                              <img className='preview' src={pilote} alt="numéro pilote"/><br />
+                              <a className="numberTitle" href="/">n° Pilote</a>
+                            </div>
+                            <div className="col-sm">
+                              <img className='preview' src={octobre} alt="numéro octobre"/><br />
+                              <a className="numberTitle" href="/">n° 1 - Octobre</a>
+                            </div>
+                            <div className="col-sm">
+                              <img className='preview' src={novembre} alt="numéro novembre"/><br />
+                              <a className="numberTitle" href="/" >n°2 - Novembre</a>
+                            </div>
                         </div>
                     </div>
                 </div>
