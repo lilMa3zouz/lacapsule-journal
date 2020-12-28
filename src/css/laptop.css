@@ -30,5 +30,8 @@
     .preview{
         width: 20px;
     }
+    #announcerContent{
+        max-width: 500px;
+    }
 
 }

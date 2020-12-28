@@ -101,7 +101,7 @@ render(){
             {lastCarousel()}
             <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
               {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-              {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+              {article(motCroisé,"Audio","juif")}
               {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
             </div>
           </div>

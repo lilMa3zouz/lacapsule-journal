@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Home from './Home';
 import Blog from './blog'
 import './css/materialIcons.css';
-import Archive from './Archive'
+import Article from './Article'
 
 
 
@@ -14,7 +14,7 @@ const Root = ()=>{
       {
         '/': () => <Home />,
         '/blog': () => <Blog />,
-        '/archives': () => <Archive />
+        '/blog/:id': ({id}) => <Article content={id} />,
       }
     )
   )

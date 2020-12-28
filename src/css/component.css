@@ -11,9 +11,8 @@
     font-size: 40px;
     height: 200%;
     margin: auto;
-    margin-top: 70px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-top: 40px;
+    max-width: 1750px;
 }
 .article{
     margin-left: 20px;

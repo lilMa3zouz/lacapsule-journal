@@ -3,9 +3,9 @@ import './css/component.css'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
 import HeaderPage from './HeaderPage'
-import './css/Archive.css'
 import React from 'react';
 import * as $ from 'jquery';
+import './css/Archive.css'
 import novembre from './cover/novembre.png'
 import octobre from './cover/octobre.png'
 import pilote from './cover/pilote.png'
@@ -45,14 +45,14 @@ class Archive extends React.Component{
             <div id="page"  onScroll={scrollFun}>
             <HeaderPage></HeaderPage>
             <div id="content2" className="container">
-                <div id="announcer" className="container row">
-                  <p id="announcerContent">
+                <div id="announcer" className="row">
+                  <div id="announcerContent" class="container">
                     <img src={this.state.announcerCover} alt="announcerCover" id="announcerCover" />
-                      <span id="announcerDate">{this.state.announcerDate}</span><br />
-                      <span id="sommaire">
-                        Sommaire <br />
+                      <span id="announcerDate" class="row">{this.state.announcerDate}</span>
+                      <span id="sommaire" class="row">
+                        Sommaire
                       </span>
-                  </p>
+                  </div>
                 </div>
                 <div id="archiveList" >
                     <div id="archiveInner">
