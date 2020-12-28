@@ -77,13 +77,12 @@ function article(img,category,title){
 }
 
 function bonus(title,img){
-  var src="./" + img
   return(
-    <div class="bonus">
-      <p class="bonusBody">
-        <img src={src} alt="" class="bonusImg"></img>
-        {title}
-      </p>
+    <div class="bonus container">
+      <div class="bonusBody container col">
+        <img src={img} alt="" class="bonusImg"></img>
+        <p class="bonusTitle">{title}</p>
+      </div>
     </div>
   )
 }
@@ -101,14 +100,14 @@ render(){
             {lastCarousel()}
             <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
               {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-              {article(motCroisé,"Audio","juif")}
-              {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+              {article("http://via.placeholder.com/650x445","Audio","Au fond de la pénombre - Kaïto Bernhart")}
+              {article("http://via.placeholder.com/650x445","Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
             </div>
           </div>
           <div id="bonusBar" className="component col-mb-auto " style={{boxShadow: theme.effects.elevation8}}>
             <h1 style={{width:"100%",borderBottom: "3px solid black",marginTop:"15px", paddingBottom:"15px"}}>Bonus</h1>
-            {bonus("3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne","")}
-            {bonus("Lorem ipsum dolor sit amet, consectetur adipiscing elit","")}
+            {bonus("traduction - 3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne","http://via.placeholder.com/200x150")}
+            {bonus("Lorem ipsum dolor sit amet, consectetur adipiscing elit","http://via.placeholder.com/200x150")}
             {bonus("Lorem ipsum dolor sit amet, consectetur adipiscing elit","")}
           </div>
       </div>

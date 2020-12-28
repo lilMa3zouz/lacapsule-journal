@@ -1,4 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { getTheme } from '@fluentui/react'
+import FileSaver from 'file-saver';
 import './css/component.css'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
@@ -31,15 +33,29 @@ function scrollFun(){
 
   
 class Archive extends React.Component{
-    state = {
+    constructor(props){
+      super(props)
+      this.state = {
         announcerDate: "n° Pilote",
         announcerContent : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
         announcerCover: pilote,
+        announcerText: "Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",
+        number: "pilote"
       }
+    }
     componentDidMount(){
         document.title = "La Capsule - Archives"
 
       }
+
+    __updateContent(announcerDate,announcerContent,announcerCover,announcerText){
+      this.setState({
+        "announcerDate": announcerDate,
+        "announcerContent": announcerContent,
+        "announcerCover": announcerCover,
+        "number": announcerDate.split(" - ")[0].split("n° ")[1]
+      })
+    }
     render(){
         return(
             <div id="page"  onScroll={scrollFun}>
@@ -48,10 +64,12 @@ class Archive extends React.Component{
                 <div id="announcer" className="row">
                   <div id="announcerContent" class="container">
                     <img src={this.state.announcerCover} alt="announcerCover" id="announcerCover" />
-                      <span id="announcerDate" class="row">{this.state.announcerDate}</span>
-                      <span id="sommaire" class="row">
-                        Sommaire
-                      </span>
+                      <span id="announcerDate" class="row">{"La capsule - " + this.state.announcerDate.split(" - ")[0]}</span>
+                      <span style={{fontSize:40}}>Sommaire:</span>
+                      <div id="sommaire" class="row" style={{boxShadow: theme.effects.elevation16}}>
+                        {this.state.announcerContent}
+                      </div>
+                      <button id="downloadButton" onClick={()=>{FileSaver.saveAs(process.env.PUBLIC_URL + "/numbers/"+this.state.number+".pdf","la capsule n°"+this.state.number+".pdf");;}}> lire en PDF</button>
                   </div>
                 </div>
                 <div id="archiveList" >
@@ -61,15 +79,15 @@ class Archive extends React.Component{
                         <div className="row" style={{margin: 'auto',width: '80%'}}>
                             <div className="col-sm">
                               <img className='preview' src={pilote} alt="numéro pilote"/><br />
-                              <a className="numberTitle" href="/">n° Pilote</a>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° Pilote","Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",pilote)}}>n° Pilote</p>
                             </div>
                             <div className="col-sm">
                               <img className='preview' src={octobre} alt="numéro octobre"/><br />
-                              <a className="numberTitle" href="/">n° 1 - Octobre</a>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° 1 - Octobre","Premier numéro officiel, la deuxième capsule aspire toujours à des manigances officieuses puisqu’elle fut la source incontrôlable d’une journée de fête (le proviseur nuança à dessein le terme de “bringue”) au sein du lycée. Cet épisode témoigne de l’effervescence inévitable que provoque la rencontre des vifs esprits pontonniens, et laisse au lecteur cette sensation pétillante de fougue sur la langue. Théâtre, réflexion et chronique nécrologique.",octobre)}}>n° 1 - Octobre</p>
                             </div>
                             <div className="col-sm">
                               <img className='preview' src={novembre} alt="numéro novembre"/><br />
-                              <a className="numberTitle" href="/" >n°2 - Novembre</a>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° 2 - Novembre","Le rythme effréné de l’alternance coronavirusesque aura eu pour effets une baisse de motivation générale, une charge de travail ingérable et... une publication tardive. Cependant, rien ne pourra affecter l’ambition malicieuse de nos rédacteurices enflammé.e.s, qui livrent un numéro cuit à point, achevé juste à temps pour être titré “numéro de novembre”. Au programme : poésie, jeu grandeur lycée, burlesque retour d’un horoscope pessimiste et sournois, et lignes italiennes à croquer.",novembre)}}>n°2 - Novembre</p>
                             </div>
                         </div>
                     </div>

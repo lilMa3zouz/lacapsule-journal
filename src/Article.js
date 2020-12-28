@@ -2,9 +2,11 @@ import { getTheme } from '@fluentui/react'
 import './css/component.css'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
+import './css/Article.css'
 import HeaderPage from './HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
+
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
@@ -28,16 +30,20 @@ function scrollFun(){
       this.template = {
         __html: require("./publication/"+this.props.content+".html")
       }
-      console.log(this.props.content)
+      this.title = this.props.content.split("-")
+      this.title = this.title.join(' ')
+
     }
     componentDidMount(){
-        document.title = "La Capsule - Archives"
+        document.title = this.title
       }
       render(){
         return(
             <div id="page" >
                 <HeaderPage />
-                <div id="content" className="container" dangerouslySetInnerHTML={this.template}>
+                <div id="content" className="container" onScroll={()=>scrollFun()}>
+                <div id='articleContainer' style={{boxShadow: theme.effects.elevation8}} dangerouslySetInnerHTML={this.template}>
+                </div>
                 </div>
             </div>
         )

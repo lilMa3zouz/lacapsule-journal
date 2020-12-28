@@ -10,6 +10,7 @@
     "babel-jest": "^24.9.0",
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
+    "file-saver": "^2.0.5",
     "hookrouter": "^1.2.5",
     "html-loader-react-scripts": "^1.2.1",
     "jquery": "^3.5.1",

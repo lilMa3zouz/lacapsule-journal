@@ -5,6 +5,7 @@ import Home from './Home';
 import Blog from './blog'
 import './css/materialIcons.css';
 import Article from './Article'
+import Archive from './Archive'
 
 
 
@@ -15,6 +16,7 @@ const Root = ()=>{
         '/': () => <Home />,
         '/blog': () => <Blog />,
         '/blog/:id': ({id}) => <Article content={id} />,
+        '/archives': () => <Archive />
       }
     )
   )

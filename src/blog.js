@@ -28,7 +28,7 @@ function scrollFun(){
 
 function article(img,category,title){
     var words=title.split(" ")
-    var href= "./"+words.join("-")
+    var href= "./blog/"+words.join("-")
     return(
       <div className="col-sm article component" style={{boxShadow: theme.effects.elevation8}}>
         <img class="articleImg" src={img} alt="article img" width="100%"/>
