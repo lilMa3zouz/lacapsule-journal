@@ -35,7 +35,7 @@ function scrollFun(){
 
     }
     componentDidMount(){
-        document.title = this.title
+        document.title = decodeURI(this.title)
       }
       render(){
         return(

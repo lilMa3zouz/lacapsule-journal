@@ -1,0 +1,22 @@
+#container{
+    max-width: 1700px;
+    background-color: white;
+    margin: auto;
+    padding: 25px;
+}
+#text{
+    font-size: 35px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+.imageHolder{
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}

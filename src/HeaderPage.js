@@ -33,10 +33,10 @@ class HeaderPage extends React.Component {
             <a className="nav-link" href="/blog">blog</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="www.youtube.com">présentation</a>
+            <a className="nav-link" href="/aboutus">présentation</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="www.youtube.com">Contact</a>
+            <a className="nav-link" href="/contact">Contact</a>
           </li>
           <button id="arrowRight" className="arrow material-icons" onClick={this.scrollArrow}>arrow_downward</button>
           </ul>
