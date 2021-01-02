@@ -31,7 +31,18 @@
         width: 20px;
     }
     #announcerContent{
-        max-width: 500px;
+        max-width: 600px;
+        border: 1px solid black;
+    }
+    #sommaire{
+        max-width: 600px;
+    }
+    #announcer{
+        margin-top: -90px;
+        min-height: 40%;
+    }
+    #announcerDate{
+        font-size: 65px;
     }
 
 }

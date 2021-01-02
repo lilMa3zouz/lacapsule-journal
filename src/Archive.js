@@ -65,7 +65,7 @@ class Archive extends React.Component{
                   <div id="announcerContent" class="container">
                     <img src={this.state.announcerCover} alt="announcerCover" id="announcerCover" />
                       <span id="announcerDate" class="row">{"La capsule - " + this.state.announcerDate.split(" - ")[0]}</span>
-                      <span style={{fontSize:40}}>Sommaire:</span>
+                      <span id="sommaireTitle">Sommaire:</span>
                       <div id="sommaire" class="row" style={{boxShadow: theme.effects.elevation16}}>
                         {this.state.announcerContent}
                       </div>
