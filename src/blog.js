@@ -14,7 +14,7 @@ const theme = getTheme();
 
 function scrollFun(){
     if($('#page')){
-      if ($('#page').scrollTop() >= document.getElementById("content").offsetTop){
+      if ($('#page').scrollTop() >= document.getElementById("content").offsetTop - 350){
         document.getElementById('stickyheader').classList.remove('nosticky')
         document.getElementById('stickyheader').classList.add('sticky')
       }
@@ -34,7 +34,7 @@ function article(img,category,title){
         <img class="articleImg" src={img} alt="article img" width="100%"/>
         <div class="articleBody">
           <p class="category">{category}</p>
-          <a href={href}><p className="articleTitle">{title}</p></a>
+          <a href={href}><p className="articleTitle" >{title}</p></a>
         </div>
       </div>
     )
@@ -49,21 +49,21 @@ render(){
         <div id="page"  onScroll={scrollFun}>
         <HeaderPage></HeaderPage>
         <div id="content" class="container">
-            <div className="col-sm">
+            <div className="col-sm">  
               <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
-                {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-                {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
-                {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+                {article(motCroisé,"Jeu","correction du mot-croisé Animaux (numéro Octobre)")}
+                {article("http://via.placeholder.com/650x445","Audio","Au fond de la pénombre - Kaïto Bernhart")}
+                {article("http://via.placeholder.com/650x445","traduction","3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne")}
               </div>
               <div className="row" style={{width:"100%",marginTop:"100px",marginLeft:"-20px"}}>
-                {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-                {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
-                {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+                {article("http://via.placeholder.com/650x445","Traduction","Ivre, iel s'inscrit par erreur au concours de version latin")}
+                {article("http://via.placeholder.com/650x445","lifestyle","29 meilleures façons d'être le pire voisin")}
+                {article("http://via.placeholder.com/650x445","random","Une patate volante au lycée")}
               </div>
               <div className="row" style={{width:"100%",marginTop:"100px",marginLeft:"-20px"}}>
-                {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-                {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
-                {article(motCroisé,"Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
+                {article("http://via.placeholder.com/650x445","cuisine","Comment des mites ont infiltré la production des bredeles alsaciennes")}
+                {article("http://via.placeholder.com/650x445","Jeu","Paf la pastèque!")}
+                {article("http://via.placeholder.com/650x445","Récit","<<le jour où j'ai perdu mes pieds>>")}
               </div>
             </div>
         </div>

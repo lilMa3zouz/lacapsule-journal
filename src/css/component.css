@@ -9,9 +9,10 @@
 #content{
     z-index: 900;
     font-size: 40px;
-    height: 200%;
+    height: 120%;
     margin: auto;
     margin-top: 40px;
+    margin-bottom: 40px;
     max-width: 1750px;
 }
 .article{
@@ -28,14 +29,14 @@
 }
 
 .category{
-    font-size: 20px;
+    font-size: 25px;
     text-decoration: underline;
     color: grey;
     width: 100%;
     text-align: left;
 }
 .articleTitle{
-    font-size: 20px;
+    font-size: 25px;
     color: black;
 }
 .articleTitle:hover{

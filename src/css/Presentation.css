@@ -3,27 +3,27 @@
     background-color: white;
     margin: auto;
     padding: 25px;
-    height: 130%;
+    height: 100%;
 }
 #text{
     font-size: 30px;
     margin-left: 40px;
     margin-right: 40px;
 }
-p{
+div + p{
     text-align: left;
 }
 #personnal{
-    margin-top: 70px;
+    margin-top: 110px;
     position: relative;
     height: 25%;
 }
 .imageHolder{
-    border-radius: 100%;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-    margin: auto
+        border-radius: 100%;
+        width: 250px;
+        height: 250px;
+        overflow: hidden;
+        margin: auto
 }
 .name{
     width: 100%;
@@ -34,24 +34,22 @@ p{
     text-align: center;
 }
 .presentation{
-    height: 80%;
+    height: 700px;
     position: absolute;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
     left: 50%;
-    animation-fill-mode: forwards;
 }
 #pres2{
-    top: 80px;
-    z-index: 1;
     transform: translateX(-50%);
 }
 #pres1{
-    z-index: 2;
     transform: translateX(-55%);
 }
 #conclusion{
+    position: relative;
+    margin-top: 500px;
     font-size: 30px;
     margin-left: 40px;
     margin-right: 40px;

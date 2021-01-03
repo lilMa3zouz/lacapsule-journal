@@ -13,7 +13,7 @@ const theme = getTheme();
 
 function scrollFun(){
     if($('#page')){
-      if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop){
+      if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop - 350){
         document.getElementById('stickyheader').classList.remove('nosticky')
         document.getElementById('stickyheader').classList.add('sticky')
       }
@@ -27,8 +27,15 @@ function scrollFun(){
   class Article extends React.Component{
     constructor(props){
       super(props)
-      this.template = {
-        __html: require("./publication/"+this.props.content+".html")
+      try{
+        this.template = {
+          __html: require("./publication/"+this.props.content+".html")
+        }
+      }
+      catch(err){
+        this.template = {
+          __html: require('./publication/fallback.html')
+        }
       }
       this.title = this.props.content.split("-")
       this.title = this.title.join(' ')

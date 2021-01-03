@@ -19,7 +19,7 @@ const theme = getTheme();
 
 function scrollFun(){
     if($('#page')){
-      if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop){
+      if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop - 350){
         document.getElementById('stickyheader').classList.remove('nosticky')
         document.getElementById('stickyheader').classList.add('sticky')
       }
@@ -37,9 +37,8 @@ class Archive extends React.Component{
       super(props)
       this.state = {
         announcerDate: "n° Pilote",
-        announcerContent : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        announcerContent: "Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",
         announcerCover: pilote,
-        announcerText: "Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",
         number: "pilote"
       }
     }
@@ -59,14 +58,14 @@ class Archive extends React.Component{
     render(){
         return(
             <div id="page"  onScroll={scrollFun}>
-            <HeaderPage></HeaderPage>
+            <HeaderPage/>
             <div id="content2" className="container">
                 <div id="announcer" className="row">
-                  <div id="announcerContent" class="container">
+                  <div id="announcerContent" className="container">
                     <img src={this.state.announcerCover} alt="announcerCover" id="announcerCover" />
-                      <span id="announcerDate" class="row">{"La capsule - " + this.state.announcerDate.split(" - ")[0]}</span>
+                      <span id="announcerDate" className="row">{"La capsule - " + this.state.announcerDate.split(" - ")[0]}</span>
                       <span id="sommaireTitle">Sommaire:</span>
-                      <div id="sommaire" class="row" style={{boxShadow: theme.effects.elevation16}}>
+                      <div id="sommaire" className="row" style={{boxShadow: theme.effects.elevation16}}>
                         {this.state.announcerContent}
                       </div>
                       <button id="downloadButton" onClick={()=>{FileSaver.saveAs(process.env.PUBLIC_URL + "/numbers/"+this.state.number+".pdf","la capsule n°"+this.state.number+".pdf");;}}> lire en PDF</button>
