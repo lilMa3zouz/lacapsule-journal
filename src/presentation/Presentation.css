@@ -14,7 +14,7 @@ div + p{
     text-align: left;
 }
 #personnal{
-    margin-top: 110px;
+    margin-top: 50px;
     position: relative;
     height: 25%;
 }
@@ -23,7 +23,8 @@ div + p{
         width: 250px;
         height: 250px;
         overflow: hidden;
-        margin: auto
+        margin: auto;
+        margin-top: 10px;
 }
 .name{
     width: 100%;
@@ -38,7 +39,7 @@ div + p{
     position: absolute;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108);
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
     left: 50%;
 }
 #pres2{
@@ -49,9 +50,35 @@ div + p{
 }
 #conclusion{
     position: relative;
-    margin-top: 500px;
+    margin-top: 400px;
     font-size: 30px;
     margin-left: 40px;
     margin-right: 40px;
     text-align: center;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
+    #container{
+        height: 100%;
+    }
+    #text{
+        font-size: 22px;
+    }
+    #personnal{
+    margin-top: 50px;
+    height: 20%;
+    }
+    .description{
+    font-size: 18px;
+    text-align: center;
+    padding-left: 15px;padding-right: 15px;
+    margin-top: -15px;
+    }
+    .presentation{
+        height: 580px;
+    }
+    .imageHolder{
+        width: 225px;
+        height: 225px;
+}
 }

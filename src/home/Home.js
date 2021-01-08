@@ -7,7 +7,6 @@ import './css/component.css';
 import './css/Home.css';
 import './css/laptop.css';
 import * as $ from 'jquery';
-import HeaderPage from './HeaderPage'
 import React from 'react';
 require('bootstrap')
 const theme = getTheme();
@@ -94,7 +93,6 @@ class Home extends React.Component{
 render(){
     return(
     <div id="page"  onScroll={scrollFun}>
-      <HeaderPage></HeaderPage>
       <div id="content" class="container row">
           <div className="col-sm">
             {lastCarousel()}

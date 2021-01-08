@@ -4,13 +4,13 @@ import FileSaver from 'file-saver';
 import './css/component.css'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
-import HeaderPage from './HeaderPage'
+import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
 import './css/Archive.css'
-import novembre from './cover/novembre.png'
-import octobre from './cover/octobre.png'
-import pilote from './cover/pilote.png'
+import novembre from '../cover/novembre.png'
+import octobre from '../cover/octobre.png'
+import pilote from '../cover/pilote.png'
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();

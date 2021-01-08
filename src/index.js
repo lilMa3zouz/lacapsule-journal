@@ -2,11 +2,11 @@ import {useRoutes} from 'hookrouter';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/materialIcons.css';
-import Home from './Home';
-import Blog from './blog'
-import Article from './Article'
-import Archive from './Archive'
-import Presentation from './Presentation'
+import Home from './home/Home';
+import Blog from './blog/blog'
+import Article from './article/Article'
+import Archive from './archive/Archive'
+import Presentation from './presentation/Presentation'
 import Fallback from './Fallback'
 
 let routes = {

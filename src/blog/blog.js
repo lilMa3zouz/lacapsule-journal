@@ -2,10 +2,9 @@ import { getTheme } from '@fluentui/react'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
 import './css/component.css'
-import './css/Blog.css'
+import 'Blog.css'
 import React from 'react';
 import * as $ from 'jquery';
-import HeaderPage from './HeaderPage'
 import motCroisé from './publication/motcroisé.jpg'
 
 
@@ -30,7 +29,7 @@ function article(img,category,title){
     var words=title.split(" ")
     var href= "./blog/"+words.join("-")
     return(
-      <div className="col-sm article component" style={{boxShadow: theme.effects.elevation8}}>
+      <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
         <img class="articleImg" src={img} alt="article img" width="100%"/>
         <div class="articleBody">
           <p class="category">{category}</p>
@@ -47,20 +46,19 @@ class Blog extends React.Component{
 render(){
     return(
         <div id="page"  onScroll={scrollFun}>
-        <HeaderPage></HeaderPage>
         <div id="content" class="container">
-            <div className="col-sm">  
-              <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
+            <div className="col-sm" id="blogCol">  
+              <div className="row blogRow" style={{marginTop: "0px"}}>
                 {article(motCroisé,"Jeu","correction du mot-croisé Animaux (numéro Octobre)")}
                 {article("http://via.placeholder.com/650x445","Audio","Au fond de la pénombre - Kaïto Bernhart")}
                 {article("http://via.placeholder.com/650x445","traduction","3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne")}
               </div>
-              <div className="row" style={{width:"100%",marginTop:"100px",marginLeft:"-20px"}}>
+              <div className="row blogRow">
                 {article("http://via.placeholder.com/650x445","Traduction","Ivre, iel s'inscrit par erreur au concours de version latin")}
                 {article("http://via.placeholder.com/650x445","lifestyle","29 meilleures façons d'être le pire voisin")}
                 {article("http://via.placeholder.com/650x445","random","Une patate volante au lycée")}
               </div>
-              <div className="row" style={{width:"100%",marginTop:"100px",marginLeft:"-20px"}}>
+              <div className="row blogRow">
                 {article("http://via.placeholder.com/650x445","cuisine","Comment des mites ont infiltré la production des bredeles alsaciennes")}
                 {article("http://via.placeholder.com/650x445","Jeu","Paf la pastèque!")}
                 {article("http://via.placeholder.com/650x445","Récit","<<le jour où j'ai perdu mes pieds>>")}

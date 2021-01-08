@@ -3,7 +3,7 @@ import './css/component.css'
 import './css/bootstrap.min.css';
 import './css/materialIcons.css';
 import './css/Presentation.css'
-import HeaderPage from './HeaderPage'
+import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
 import hanae from './img/agneau.png'
@@ -29,7 +29,7 @@ function scrollFun(){
         super(props)
         this.state = {
           pres1top: 0,
-          pres2top: 80,
+          pres2top: 20,
           pres1index: 2,
           pres2index: 1,
         }
@@ -87,6 +87,7 @@ function scrollFun(){
 
       componentDidMount(){
         document.title = "La Capsule - Présentation"
+        console.log(theme.effects.elevation64)
       }
       render(){
         return(
