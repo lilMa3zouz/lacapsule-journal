@@ -2,6 +2,8 @@ import {useRoutes} from 'hookrouter';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/materialIcons.css';
+import './css/component.css'
+import './css/bootstrap.min.css';
 import Home from './home/Home';
 import Blog from './blog/blog'
 import Article from './article/Article'

@@ -1,8 +1,4 @@
 import { getTheme } from '@fluentui/react'
-import './css/bootstrap.min.css';
-import './css/materialIcons.css';
-import './css/component.css'
-import './css/Blog.css'
 import React from 'react';
 import * as $ from 'jquery';
 import HeaderPage from './HeaderPage'
@@ -31,7 +27,7 @@ class Fallback extends React.Component{
 render(){
     return(
         <div id="page"  onScroll={scrollFun}>
-        <HeaderPage></HeaderPage>
+        <HeaderPage />
         <div id="content2" class="container">
 
         </div>

@@ -1,11 +1,10 @@
 import { getTheme } from '@fluentui/react'
-import './css/bootstrap.min.css';
-import './css/materialIcons.css';
-import './css/component.css'
-import 'Blog.css'
+import './blog.css'
 import React from 'react';
 import * as $ from 'jquery';
-import motCroisé from './publication/motcroisé.jpg'
+import motCroisé from '../publication/motcroisé.jpg'
+import HeaderPage from '../HeaderPage'
+
 
 
 require('bootstrap')
@@ -46,6 +45,7 @@ class Blog extends React.Component{
 render(){
     return(
         <div id="page"  onScroll={scrollFun}>
+        <HeaderPage />
         <div id="content" class="container">
             <div className="col-sm" id="blogCol">  
               <div className="row blogRow" style={{marginTop: "0px"}}>

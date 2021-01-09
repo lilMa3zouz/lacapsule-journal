@@ -1,13 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { getTheme } from '@fluentui/react'
 import FileSaver from 'file-saver';
-import './css/component.css'
-import './css/bootstrap.min.css';
-import './css/materialIcons.css';
 import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
-import './css/Archive.css'
+import './archive.css'
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import pilote from '../cover/pilote.png'
@@ -17,7 +14,8 @@ const theme = getTheme();
 
 
 
-function scrollFun(){
+function scrollFun(){ 
+
     if($('#page')){
       if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop - 350){
         document.getElementById('stickyheader').classList.remove('nosticky')

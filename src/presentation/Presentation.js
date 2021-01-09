@@ -1,12 +1,9 @@
 import { getTheme } from '@fluentui/react'
-import './css/component.css'
-import './css/bootstrap.min.css';
-import './css/materialIcons.css';
-import './css/Presentation.css'
+import './presentation.css'
 import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
-import hanae from './img/agneau.png'
+import hanae from './agneau.png'
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
 

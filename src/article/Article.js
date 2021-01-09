@@ -1,10 +1,8 @@
 import { getTheme } from '@fluentui/react'
-import './css/component.css'
-import './css/bootstrap.min.css';
-import './css/materialIcons.css';
-import './css/Article.css'
+import './article.css'
 import React from 'react';
 import * as $ from 'jquery';
+import HeaderPage from '../HeaderPage'
 
 
 require('bootstrap')// eslint-disable-next-line
@@ -12,7 +10,8 @@ const theme = getTheme();
 
 function scrollFun(){
     if($('#page')){
-      if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop - 350){
+      console.log(document.getElementById("content").offsetTop )
+      if ($('#page').scrollTop() >= document.getElementById("content").offsetTop - 350){
         document.getElementById('stickyheader').classList.remove('nosticky')
         document.getElementById('stickyheader').classList.add('sticky')
       }
@@ -28,12 +27,12 @@ function scrollFun(){
       super(props)
       try{
         this.template = {
-          __html: require("./publication/"+this.props.content+".html")
+          __html: require("../publication/"+this.props.content+".html")
         }
       }
       catch(err){
         this.template = {
-          __html: require('./publication/fallback.html')
+          __html: require('../publication/fallback.html')
         }
       }
       this.title = this.props.content.split("-")
@@ -45,7 +44,8 @@ function scrollFun(){
       }
       render(){
         return(
-            <div id="page" >
+            <div id="page" onScroll={()=>scrollFun()} >
+                <HeaderPage />
                 <div id="content" className="container" onScroll={()=>scrollFun()}>
                 <div id='articleContainer' style={{boxShadow: theme.effects.elevation8}} dangerouslySetInnerHTML={this.template}>
                 </div>

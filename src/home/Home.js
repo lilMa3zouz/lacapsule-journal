@@ -1,11 +1,9 @@
 import { getTheme } from '@fluentui/react';
-import angleRight from './img/angle-right.svg'// eslint-disable-next-line
-import angleLeft from './img/angle-left.svg'// eslint-disable-next-line
-import motCroisé from './publication/motcroisé.jpg'
-import './css/bootstrap.min.css';
-import './css/component.css';
-import './css/Home.css';
-import './css/laptop.css';
+import angleRight from './angle-right.svg'// eslint-disable-next-line
+import angleLeft from './angle-left.svg'// eslint-disable-next-line
+import motCroisé from '../publication/motcroisé.jpg'
+import './home.css';
+import HeaderPage from '../HeaderPage'
 import * as $ from 'jquery';
 import React from 'react';
 require('bootstrap')
@@ -93,10 +91,11 @@ class Home extends React.Component{
 render(){
     return(
     <div id="page"  onScroll={scrollFun}>
+        <HeaderPage />
       <div id="content" class="container row">
           <div className="col-sm">
             {lastCarousel()}
-            <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
+            <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"20px"}}>
               {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
               {article("http://via.placeholder.com/650x445","Audio","Au fond de la pénombre - Kaïto Bernhart")}
               {article("http://via.placeholder.com/650x445","Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
