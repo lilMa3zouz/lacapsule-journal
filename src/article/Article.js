@@ -1,5 +1,5 @@
 import { getTheme } from '@fluentui/react'
-import './article.css'
+import './articleStyle.css'
 import React from 'react';
 import * as $ from 'jquery';
 import HeaderPage from '../HeaderPage'

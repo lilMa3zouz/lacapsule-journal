@@ -1,5 +1,5 @@
 import { getTheme } from '@fluentui/react'
-import './blog.css'
+import './blogStyle.css'
 import React from 'react';
 import * as $ from 'jquery';
 import motCroisé from '../publication/motcroisé.jpg'

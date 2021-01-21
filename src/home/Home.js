@@ -2,11 +2,10 @@ import { getTheme } from '@fluentui/react';
 import angleRight from './angle-right.svg'// eslint-disable-next-line
 import angleLeft from './angle-left.svg'// eslint-disable-next-line
 import motCroisé from '../publication/motcroisé.jpg'
-import './home.css';
+import './homeStyle.css';
 import HeaderPage from '../HeaderPage'
 import * as $ from 'jquery';
 import React from 'react';
-import kaito from '../img/kaito.jpg'
 
 require('bootstrap')
 const theme = getTheme();
@@ -99,7 +98,7 @@ render(){
             {lastCarousel()}
             <div className="row" style={{width:"100%",marginTop:"20px",marginLeft:"-20px"}}>
               {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-              {article(kaito,"Audio","Au fond de la pénombre - Kaïto Bernhart")}
+              {article("http://via.placeholder.com/650x445","Audio","Au fond de la pénombre - Kaïto Bernhart")}
               {article("http://via.placeholder.com/650x445","Catégorie Random","Lorem ipsum dolor sit amet, consectetur adipiscing elit")}
             </div>
           </div>
