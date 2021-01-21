@@ -8,6 +8,7 @@ import './archive.css'
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import pilote from '../cover/pilote.png'
+import janvier from '../cover/janvier.png'
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
@@ -85,6 +86,10 @@ class Archive extends React.Component{
                             <div className="col-sm">
                               <img className='preview' src={novembre} alt="numéro novembre"/><br />
                               <p className="numberTitle" onClick={()=>{this.__updateContent("n° 2 - Novembre","Le rythme effréné de l’alternance coronavirusesque aura eu pour effets une baisse de motivation générale, une charge de travail ingérable et... une publication tardive. Cependant, rien ne pourra affecter l’ambition malicieuse de nos rédacteurices enflammé.e.s, qui livrent un numéro cuit à point, achevé juste à temps pour être titré “numéro de novembre”. Au programme : poésie, jeu grandeur lycée, burlesque retour d’un horoscope pessimiste et sournois, et lignes italiennes à croquer.",novembre)}}>n°2 - Novembre</p>
+                            </div>
+                            <div className="col-sm">
+                              <img className='preview' src={novembre} alt="numéro novembre"/><br />
+                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° 3 - Hiver","",janvier)}}>n°3 - Hiver</p>
                             </div>
                         </div>
                     </div>
