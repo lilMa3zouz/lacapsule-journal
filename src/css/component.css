@@ -41,5 +41,8 @@
     #content{
         height: 200%;
     }
-
+    .articleTitle{
+    font-size: 20px;
+    color: black;
+}
 }

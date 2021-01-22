@@ -6,7 +6,8 @@ import motCroisé from '../publication/motcroisé.jpg'
 import HeaderPage from '../HeaderPage'
 import pasteque from '../img/pasteque.jpg'
 import pieds from '../img/pieds.jpg'
-
+import kaito from '../img/kaito-min.jpg'
+import amira from '../img/sectionit.jpg'
 
 require('bootstrap')
 const theme = getTheme();
@@ -30,10 +31,10 @@ function article(img,category,title){
     var href= "./blog/"+words.join("-")
     return(
       <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
-        <img class="articleImg" src={img}  alt="article img" width="100%" height="350px"/>
+        <img class="articleImg" src={img}  alt="article img" width="100%" />
         <div class="articleBody">
           <p class="category">{category}</p>
-          <a href={href}><p className="articleTitle" >{title}</p></a>
+          <a href={href}><p className="articleTitle">{title}</p></a>
         </div>
       </div>
     )
@@ -52,8 +53,8 @@ render(){
             <div className="col-sm" id="blogCol">  
               <div className="row blogRow" style={{marginTop: "0px"}}>
                 {article(motCroisé,"Jeu","correction du mot-croisé Animaux (numéro Octobre)")}
-                {article("http://via.placeholder.com/650x445","Audio","Au fond de la pénombre - Kaïto Bernhart")}
-                {article("http://via.placeholder.com/650x445","traduction","3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne")}
+                {article(kaito,"Audio","Au fond de la pénombre - Kaïto Bernhart")}
+                {article(amira,"traduction","3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne")}
               </div>
               <div className="row blogRow">
                 {article("https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/03/27/node_141802/11594218/public/2020/03/27/B9723053903Z.1_20200327145627_000%2BGLJFQ0N9A.1-0.jpg?itok=yvKi8H_m1585318478","Traduction","Ivre, iel s'inscrit par erreur au concours de version latin")}

@@ -15,31 +15,23 @@ class HeaderPage extends React.Component {
       }
   render() {
     return (
-        <div id="header">
-      <img id="topBar" src={topBar} alt="topBar" />
-      <a href="/"><img id="imgHeader" className="imgHeader" src={banner} alt="capsuleBanner" /></a>
-      <div id="stickyheader" className="nosticky animate__animated">
-        <p style={{width:"100%",textAlign:"center",height: "100%"}}>
-          <a href="/"><img src={titre} height="100%" alt="logo" style={{paddingTop:"10px",paddingBottom:"10px",backgroundColor: "#ededed"}} /></a>
-        </p> 
-      </div>
-      <img src={banner} alt="invisibleHeader" className="imgHeader" id="fakeHeader" style={{"visibility":"hidden"}} />  
-      <ul id="navBar" className="nav justify-content-between">
-      <button id="arrowLeft" className="arrow material-icons" onClick={this.scrollArrow} >arrow_downward</button>
-          <li className="nav-item">
-            <a className="nav-link" href="/archives">Archives</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/blog">blog</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/aboutus">présentation</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/contact">Contact</a>
-          </li>
+      <div id="header">
+        <img id="topBar" src={topBar} alt="topBar" />
+        <a href="/"><img id="imgHeader" className="imgHeader" src={banner} alt="capsuleBanner" /></a>
+        <div id="stickyheader" className="nosticky animate__animated">
+          <p style={{width:"100%",textAlign:"center",height: "100%"}}>
+            <a href="/"><img src={titre} height="100%" alt="logo" style={{paddingTop:"10px",paddingBottom:"10px",backgroundColor: "#ededed"}} /></a>
+          </p> 
+        </div>
+        <img src={banner} alt="invisibleHeader" className="imgHeader" id="fakeHeader" style={{"visibility":"hidden"}} />  
+        <ul id="navBar" className="nav justify-content-between">
+          <button id="arrowLeft" className="arrow material-icons" onClick={this.scrollArrow} >arrow_downward</button>
+          <li className="nav-item"><a className="nav-link" href="/archives">Archives</a></li>
+          <li className="nav-item"><a className="nav-link" href="/blog">blog</a></li>
+          <li className="nav-item"><a className="nav-link" href="/aboutus">présentation</a></li>
+          <li className="nav-item"><a className="nav-link" href="/contact">Contact</a></li>
           <button id="arrowRight" className="arrow material-icons" onClick={this.scrollArrow}>arrow_downward</button>
-          </ul>
+        </ul>
     </div>
     )
   }

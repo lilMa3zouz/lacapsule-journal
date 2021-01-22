@@ -9,9 +9,16 @@
     width: 100%;
 
 }
+.articleImg{
+    height:350px
+}
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
     .blogRow{
         margin-top: 50px;
     }
+    .articleImg{
+        height:250px
+    }
+
 }
