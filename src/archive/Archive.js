@@ -18,7 +18,7 @@ const theme = getTheme();
 function scrollFun(){ 
 
     if($('#page')){
-      if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop - 350){
+    if ($('#page').scrollTop() >= document.getElementById("content2").offsetTop - 150){
         document.getElementById('stickyheader').classList.remove('nosticky')
         document.getElementById('stickyheader').classList.add('sticky')
       }
@@ -29,6 +29,29 @@ function scrollFun(){
     }
   }
 
+let archives = {
+  0:{
+      announcerDate: "n° Pilote",
+      announcerContent: "Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",
+      announcerCover: pilote,
+      number: "pilote"
+  },
+  1:{
+      announcerDate: "n° 1 - Octobre",
+      announcerContent: "Premier numéro officiel, la deuxième capsule aspire toujours à des manigances officieuses puisqu’elle fut la source incontrôlable d’une journée de fête (le proviseur nuança à dessein le terme de “bringue”) au sein du lycée. Cet épisode témoigne de l’effervescence inévitable que provoque la rencontre des vifs esprits pontonniens, et laisse au lecteur cette sensation pétillante de fougue sur la langue. Théâtre, réflexion et chronique nécrologique.",
+      announcerCover: octobre
+  },
+  2:{
+      announcerDate: "n° 2 - Novembre",
+      announcerContent: "Le rythme effréné de l’alternance coronavirusesque aura eu pour effets une baisse de motivation générale, une charge de travail ingérable et... une publication tardive. Cependant, rien ne pourra affecter l’ambition malicieuse de nos rédacteurices enflammé.e.s, qui livrent un numéro cuit à point, achevé juste à temps pour être titré “numéro de novembre”. Au programme : poésie, jeu grandeur lycée, burlesque retour d’un horoscope pessimiste et sournois, et lignes italiennes à croquer.",
+      announcerCover: novembre
+  },
+  3:{
+      announcerDate: "n° 3 - Hiver",
+      announcerContent: "La Capsule prend de l’ampleur et de l’épaisseur pour que vous puissiez commencer l’année 2020 avec une réserve de papier journal allume-feu bien fournie (car oui, il le faut depuis que la neige a gagné Strasbourg). Si vous avez l’audace de pencher vos mirettes sur nos lignes mijotées avant de les enfouir froidement dans votre poêle, vous aurez pour réchauffer votre coeur la burlesque nouvelle Voltarène et le patator, de la poésie espagnole, une réflexion autour de la précarité menstruelle, le museau humide du Bergasmouille et tout ce qu’on ne vous dit pas car nous cultivons le mystère. Grâce à un accès privilégié au lycée des Pontonniers vous saurez trouver à l’intersection de la page 4 et 5 une planche d’autocollants tendrement confectionnée. On vous embrasse de sueur et d’encre (car on ne le dit pas assez mais notre lectorat est le plus sincère et affectueux du quartier).",
+      announcerCover:janvier,
+  }
+}
 
   
 class Archive extends React.Component{
@@ -46,13 +69,20 @@ class Archive extends React.Component{
 
       }
 
-    __updateContent(announcerDate,announcerContent,announcerCover,announcerText){
+    __updateContent(id){
+      let content = archives[id]
       this.setState({
-        "announcerDate": announcerDate,
-        "announcerContent": announcerContent,
-        "announcerCover": announcerCover,
-        "number": announcerDate.split(" - ")[0].split("n° ")[1]
+        "announcerDate": content.announcerDate,
+        "announcerContent": content.announcerContent,
+        "announcerCover": content.announcerCover,
+        "number": content.announcerDate.split(" - ")[0].split("n° ")[1]
       })
+    }
+    componentDidMount(){
+      if(this.props.content){
+          this.__updateContent(this.props.content)
+      }
+
     }
     render(){
         return(
@@ -77,19 +107,19 @@ class Archive extends React.Component{
                         <div className="row" style={{margin: 'auto',width: '80%'}}>
                             <div className="col-sm">
                               <img className='preview' src={pilote} alt="numéro pilote"/><br />
-                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° Pilote","Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",pilote)}}>n° Pilote</p>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent(0)}}>n° Pilote</p>
                             </div>
                             <div className="col-sm">
                               <img className='preview' src={octobre} alt="numéro octobre"/><br />
-                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° 1 - Octobre","Premier numéro officiel, la deuxième capsule aspire toujours à des manigances officieuses puisqu’elle fut la source incontrôlable d’une journée de fête (le proviseur nuança à dessein le terme de “bringue”) au sein du lycée. Cet épisode témoigne de l’effervescence inévitable que provoque la rencontre des vifs esprits pontonniens, et laisse au lecteur cette sensation pétillante de fougue sur la langue. Théâtre, réflexion et chronique nécrologique.",octobre)}}>n° 1 - Octobre</p>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent(1)}}>n° 1 - Octobre</p>
                             </div>
                             <div className="col-sm">
                               <img className='preview' src={novembre} alt="numéro novembre"/><br />
-                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° 2 - Novembre","Le rythme effréné de l’alternance coronavirusesque aura eu pour effets une baisse de motivation générale, une charge de travail ingérable et... une publication tardive. Cependant, rien ne pourra affecter l’ambition malicieuse de nos rédacteurices enflammé.e.s, qui livrent un numéro cuit à point, achevé juste à temps pour être titré “numéro de novembre”. Au programme : poésie, jeu grandeur lycée, burlesque retour d’un horoscope pessimiste et sournois, et lignes italiennes à croquer.",novembre)}}>n°2 - Novembre</p>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent(2)}}>n°2 - Novembre</p>
                             </div>
                             <div className="col-sm">
                               <img className='preview' src={novembre} alt="numéro novembre"/><br />
-                              <p className="numberTitle" onClick={()=>{this.__updateContent("n° 3 - Hiver","",janvier)}}>n°3 - Hiver</p>
+                              <p className="numberTitle" onClick={()=>{this.__updateContent(3)}}>n°3 - Hiver</p>
                             </div>
                         </div>
                     </div>

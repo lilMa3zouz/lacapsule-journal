@@ -3,7 +3,6 @@
     background-color: white;
     margin: auto;
     padding: 25px;
-    height: 100%;
 }
 #text{
     font-size: 30px;
@@ -16,15 +15,15 @@ div + p{
 #personnal{
     margin-top: 50px;
     position: relative;
-    height: 25%;
+    height: auto;
 }
 .imageHolder{
-        border-radius: 100%;
-        width: 250px;
-        height: 250px;
-        overflow: hidden;
-        margin: auto;
-        margin-top: 10px;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 10px;
 }
 .name{
     width: 100%;
@@ -71,8 +70,8 @@ div + p{
     .description{
     font-size: 18px;
     text-align: center;
-    padding-left: 15px;padding-right: 15px;
-    margin-top: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
     }
     .presentation{
         height: 580px;

@@ -9,15 +9,17 @@ import Blog from './blog/blog'
 import Article from './article/Article'
 import Archive from './archive/Archive'
 import Presentation from './presentation/Presentation'
+import Contact from './contact/Contact'
 import Fallback from './Fallback'
 
 let routes = {
   '/': () => <Home />,
   '/blog': () => <Blog />,
   '/blog/:id': ({id}) => <Article content={id} />,
-  '/archives': () => <Archive />,
+  '/archives': () => <Archive/>,
+  '/archives/:id': ({id}) => <Archive content={id}/>,
   '/aboutus': () => <Presentation />,
-  '/contact': () => <Presentation />
+  '/contact': () => <Contact />
 }
 
 const Root = ()=>{

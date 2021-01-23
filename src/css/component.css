@@ -9,11 +9,12 @@
 #content{
     z-index: 900;
     font-size: 40px;
-    height: 120%;
     margin: auto;
+    height: auto;
     margin-top: 40px;
     margin-bottom: 40px;
-    max-width: 1750px;
+    max-width: 1150px;
+    width: 90%;
 }
 .articleImg{
     margin-top: 0;
@@ -31,7 +32,7 @@
     text-align: left;
 }
 .articleTitle{
-    font-size: 25px;
+    font-size: 20px;
     color: black;
 }
 .articleTitle:hover{
@@ -39,7 +40,7 @@
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
     #content{
-        height: 200%;
+        height: auto;
     }
     .articleTitle{
     font-size: 20px;

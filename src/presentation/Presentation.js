@@ -9,7 +9,7 @@ const theme = getTheme();
 
 function scrollFun(){
       if($('#page')){
-        if ($('#page').scrollTop() >= document.getElementById("content").offsetTop - 350){
+    if ($('#page').scrollTop() >= document.getElementById("content").offsetTop - 150){
           document.getElementById('stickyheader').classList.remove('nosticky')
           document.getElementById('stickyheader').classList.add('sticky')
         }
@@ -90,8 +90,8 @@ function scrollFun(){
         return(
             <div id="page" onScroll={()=>scrollFun()} >
                 <HeaderPage />
-                <div id="content" className="container">
-                    <div id='container' className="container" style={{boxShadow: theme.effects.elevation8}}>
+                <div id="content" className="container" style={{minHeight:"1700px"}}>
+                    <div id='container' className="container" style={{boxShadow: theme.effects.elevation8,minHeight:"1300px"}}>
                         <div id="text">
                             <p style={{textAlign:'left'}}>
                             <i>La Capsule</i> n’est pas l’héritage malmené du <i>Micromonde</i> (qui animait jadis les lectures pontoniennes), 
@@ -106,7 +106,8 @@ function scrollFun(){
                             <p>
                             </p>
                         </div>
-                        <div id="personnal">
+                        <div className="container">
+                          <div id="personnal">
                             <div className="presentation" id="pres1"  onClick={()=>this.togglePres1()} style={{top: this.state.pres1top,zIndex: this.state.pres1index}}>
                                 <div className="imageHolder"><img src={hanae} alt="Hanae"/></div>
                                 <p className="name">ROMANE PONTON</p>
@@ -120,6 +121,7 @@ function scrollFun(){
                         </div>
                         <div id="conclusion" >
                           <b>Tendez l'oreille, et déployez la langue, buvez nos blagues infectes comme un sirop d'érable, et n'hésitez pas à rentrer dans le cercle ; nous sommes toujours à votre écoute. </b>
+                        </div>
                         </div>
                     </div> 
                 </div>

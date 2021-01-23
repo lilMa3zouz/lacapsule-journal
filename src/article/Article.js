@@ -11,7 +11,7 @@ const theme = getTheme();
 function scrollFun(){
     if($('#page')){
       console.log(document.getElementById("content").offsetTop )
-      if ($('#page').scrollTop() >= document.getElementById("content").offsetTop - 350){
+    if ($('#page').scrollTop() >= document.getElementById("content").offsetTop - 150){
         document.getElementById('stickyheader').classList.remove('nosticky')
         document.getElementById('stickyheader').classList.add('sticky')
       }
