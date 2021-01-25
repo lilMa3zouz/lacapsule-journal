@@ -9,6 +9,8 @@ import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import pilote from '../cover/pilote.png'
 import janvier from '../cover/janvier.png'
+import FooterPage from '../footer/Footer';
+
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
@@ -125,6 +127,8 @@ class Archive extends React.Component{
                     </div>
                 </div>
             </div>
+                    <FooterPage/>
+
           </div>
         )
     }

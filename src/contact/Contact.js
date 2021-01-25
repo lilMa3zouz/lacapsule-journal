@@ -5,6 +5,8 @@ import React from 'react';
 import * as $ from 'jquery';
 import instagram from '../img/instagram.png'
 import gmail from '../img/gmail.png'
+import FooterPage from '../footer/Footer';
+
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
@@ -47,17 +49,19 @@ function scrollFun(){
                                 </figcaption>
                               </figure>
                               <figure>
-                                <a href="https://www.instagram.com/lacapsulejournal/" target="_blank"><img src={gmail} className="instagram" /></a>
-                                <figcaption>@lacapsulejournal <br />sur instagram</figcaption>
+                                <a href="mailto:lacapsulejournal@gmail.com"><img src={gmail} className="instagram" /></a>
+                                <figcaption>lacapsulejournal@gmail.com</figcaption>
                               </figure>
                             </p>
                             <p>
-                              Vous pouvez, bien sûr, nous alpaguer dans les couloirs du lycée international strasbourgeois à toute heure du jour et de la nuit. Retrouvez les noms des participant·e·s dans la page remerciements de chaque numéro
+                              Vous pouvez, bien sûr, nous alpaguer dans les couloirs du lycée international strasbourgeois à toute heure du jour et de la nuit. <br /> Retrouvez les noms des participant·e·s dans la page <b>remerciements</b> de chaque numéro
                             </p>
                         </div>
                       
                     </div> 
                 </div>
+                        <FooterPage/>
+
             </div>
         )
       }

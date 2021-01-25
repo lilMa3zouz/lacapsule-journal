@@ -9,6 +9,7 @@ import pieds from '../img/pieds.jpg'
 import kaito from '../img/kaito-min.jpg'
 import amira from '../img/sectionit.jpg'
 import roro from '../img/roro.jpg'
+import FooterPage from '../footer/Footer';
 
 require('bootstrap')
 const theme = getTheme();
@@ -69,6 +70,8 @@ render(){
               </div>
             </div>
         </div>
+                <FooterPage/>
+
       </div>
     )
 }
