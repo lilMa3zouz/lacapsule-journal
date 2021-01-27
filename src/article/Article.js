@@ -25,9 +25,10 @@ function scrollFun(){
   class Article extends React.Component{
     constructor(props){
       super(props)
+      console.log(decodeURI(this.props.content))
       try{
         this.template = {
-          __html: require("../publication/"+this.props.content+".html")
+          __html: require("../publication/"+decodeURI(this.props.content)+".html")
         }
       }
       catch(err){
@@ -47,7 +48,9 @@ function scrollFun(){
             <div id="page" onScroll={()=>scrollFun()} >
                 <HeaderPage />
                 <div id="content" className="container" onScroll={()=>scrollFun()}>
-                <div id='articleContainer' style={{boxShadow: theme.effects.elevation8}} dangerouslySetInnerHTML={this.template}>
+                  <div id='articleContainer' style={{boxShadow: theme.effects.elevation8}}>
+                    <h1 style={{marginLeft:"30px",textAlign:"left",textDecoration:"underline"}}>{decodeURI(this.title)}</h1>
+                    <div dangerouslySetInnerHTML={this.template}></div>
                 </div>
                 </div>
             </div>

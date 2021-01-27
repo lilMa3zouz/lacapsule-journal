@@ -23,28 +23,7 @@ function scrollFun(){
       }
   }
 
-const styles = {
-  slide: {
-    padding: 15,
-    minHeight: 100,
-    color: '#fff',
-  },
-  slide1: {
-    background: '#FEA900',
-  },
-  slide2: {
-    background: '#B3DC4A',
-  },
-  slide3: {
-    background: '#6AC0FF',
-  },
-};
-
   class Presentation extends React.Component{
-      constructor(props){
-        super(props)
-      }
-
 
       componentDidMount(){
         document.title = "La Capsule - Présentation"

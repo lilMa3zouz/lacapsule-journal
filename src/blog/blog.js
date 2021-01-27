@@ -2,7 +2,7 @@ import { getTheme } from '@fluentui/react'
 import './blogStyle.css'
 import React from 'react';
 import * as $ from 'jquery';
-import motCroisé from '../publication/motcroisé.jpg'
+import motCroisé from '../img/motcroisé.jpg'
 import HeaderPage from '../HeaderPage'
 import pasteque from '../img/pasteque.jpg'
 import pieds from '../img/pieds.jpg'
@@ -10,9 +10,18 @@ import kaito from '../img/kaito-min.jpg'
 import amira from '../img/sectionit.jpg'
 import roro from '../img/roro.jpg'
 import FooterPage from '../footer/Footer';
+import { data } from 'jquery';
 
 require('bootstrap')
 const theme = getTheme();
+
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
+const images = importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
 
 function scrollFun(){
     if($('#page')){
@@ -41,12 +50,33 @@ function article(img,category,title){
       </div>
     )
   }
+ 
+
 
 class Blog extends React.Component{
+  constructor(props){
+    super(props)
+    this.data = require("../data.json").data
+  }
   componentDidMount(){
     document.title = "La Capsule - Blog"
-    console.log($('.articleImg'))
   }
+
+  __article(key){
+    var words=this.data[key].title.split(" ")
+    var href= "./blog/"+words.join("-")
+    var imgPath = "../img/bar.png"
+    return(
+      <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
+        <img class="articleImg" src={"../img/kaito-min.jpg"}  alt="article img" width="100%" />
+        <div class="articleBody">
+          <p class="category">{this.data[key].category}</p>
+          <a href={href}><p className="articleTitle">{this.data[key].title}</p></a>
+        </div>
+      </div>
+    )
+  }
+
 render(){
     return(
         <div id="page"  onScroll={scrollFun}>
@@ -54,7 +84,7 @@ render(){
         <div id="content" class="container">
             <div className="col-sm" id="blogCol">  
               <div className="row blogRow" style={{marginTop: "0px"}}>
-                {article(motCroisé,"Jeu","correction du mot-croisé Animaux (numéro Octobre)")}
+                {this.__article(2)}
                 {article(kaito,"Audio","Au fond de la pénombre - Kaïto Bernhart")}
                 {article(amira,"traduction","3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne")}
               </div>

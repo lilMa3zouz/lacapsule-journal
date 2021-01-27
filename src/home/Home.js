@@ -1,7 +1,7 @@
 import { getTheme } from '@fluentui/react';
 import angleRight from './angle-right.svg'// eslint-disable-next-line
 import angleLeft from './angle-left.svg'// eslint-disable-next-line
-import motCroisé from '../publication/motcroisé.jpg'
+import motCroisé from '../img/motcroisé.jpg'
 import './homeStyle.css';
 import HeaderPage from '../HeaderPage'
 import * as $ from 'jquery';
