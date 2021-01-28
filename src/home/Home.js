@@ -1,18 +1,12 @@
 import { getTheme } from '@fluentui/react';
-import angleRight from './angle-right.svg'// eslint-disable-next-line
-import angleLeft from './angle-left.svg'// eslint-disable-next-line
-import motCroisé from '../img/motcroisé.jpg'
+import angleRight from './angle-right.svg'
+import angleLeft from './angle-left.svg'
 import './homeStyle.css';
 import HeaderPage from '../HeaderPage'
 import * as $ from 'jquery';
-import kaito from '../img/kaito-min.jpg'
-import amira from '../img/sectionit.jpg'
-import roro from '../img/roro.jpg'
 import React from 'react';
-import bonbons from '../img/bonbons.jpg'
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
-import pilote from '../cover/pilote.png'
 import janvier from '../cover/janvier.png'
 import FooterPage from '../footer/Footer';
 
@@ -32,6 +26,9 @@ function scrollFun(){
   }
 }
 
+var data = require("../data.json").data
+var bonusList = []
+var articleList = []
 
 function lastCarousel() {
   return(
@@ -69,37 +66,54 @@ function lastCarousel() {
   )
 }
 
-function article(img,category,title){
-  var words=title.split(" ")
-  var href= "./blog/"+words.join("-")
-  return(
-    <div className="col-sm article component" style={{boxShadow: theme.effects.elevation8}}>
-      <img class="articleImg2" src={img} alt="article img" width="100%"/>
-      <div class="articleBody">
-        <p class="category2">{category}</p>
-        <a href={href}><p className="articleTitle">{title}</p></a>
-      </div>
-    </div>
-  )
-}
-
-function bonus(title,img){
-var words=title.split(" ")
+function bonus(key){
+  var words=data[key].title.split(" ")
     var href= "./blog/"+words.join("-")
   return(
     <div class="bonus container">
       <div class="bonusBody container col">
-        <img src={img} alt="" class="bonusImg" style={{boxShadow:theme.effects.elevation64}}></img>
-        <a href={href}><p className="bonusTitle">{title}</p></a>
+        <img src={data[key].img} alt="" class="bonusImg" style={{boxShadow:theme.effects.elevation64}}></img>
+        <a href={href}><p className="bonusTitle">{data[key].title}</p></a>
       </div>
     </div>
   )
 }
 
+function article2(key){
+  var words=data[key].title.split(" ")
+  var href= "./blog/"+words.join("-")
+  var img = data[key].img
+  return(
+    <div className="col-sm article component" style={{boxShadow: theme.effects.elevation8}}>
+      <img class="articleImg2" src={img}  alt="article img" width="100%" />
+      <div class="articleBody">
+        <p class="category2">{data[key].category}</p>
+        <a href={href}><p className="articleTitle">{data[key].title}</p></a>
+      </div>
+    </div>
+  )
+  }
+
 class Home extends React.Component{
+  constructor(props){
+    super(props)
+    data.forEach(function(element){
+      if(element.function === "article"){
+        articleList.push(article2(data.indexOf(element)))
+      }
+      if(element.function === "bonus"){
+        bonusList.push(bonus(data.indexOf(element)))
+      }
+    })
+    articleList = articleList.filter((month,idx) => idx < 3)
+    bonusList = bonusList.filter((month,idx) => idx < 4)
+
+
+  }
   componentDidMount(){
     document.title = "La Capsule"
   }
+  
 render(){
     return(
     <div id="page"  onScroll={scrollFun}>
@@ -107,17 +121,13 @@ render(){
       <div id="content" class="container row">
           <div className="col-sm">
             {lastCarousel()}
-            <div className="row" style={{marginLeft:"0",width:"95%",marginTop:"20px"}}>
-              {article(motCroisé,"Erratum","correction du mot-croisé Animaux (numéro Octobre)")}
-              {article("https://remeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2020/03/27/node_141802/11594218/public/2020/03/27/B9723053903Z.1_20200327145627_000%2BGLJFQ0N9A.1-0.jpg?itok=yvKi8H_m1585318478","Traduction","Ivre, iel s'inscrit par erreur au concours de version latin")}
-              {article(bonbons,"Dossier","Comment la production Haribo influe-t-elle sur la deforestation norvegienne")}
+            <div className="row" style={{marginLeft:"20px",width:"96%",marginTop:"20px"}}>
+            {articleList}
             </div>
           </div>
           <div id="bonusBar" className="col-mb-auto " style={{boxShadow: theme.effects.elevation16}}>
             <h1 style={{width:"100%",borderBottom: "3px solid black",marginTop:"15px", paddingBottom:"15px"}}>Bonus</h1>
-            {bonus("3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne",amira)}
-            {bonus("Au fond de la pénombre - Kaïto Bernhart",kaito)}
-            {bonus("Vous n'entrez pas le silence - Romane Ponton",roro)}
+            {bonusList}
           </div>
       </div>
         <FooterPage/>
@@ -127,9 +137,3 @@ render(){
 }
 
 export default Home;
-
-/* 
-{lastCarousel()}
-          <div className="container article" style={{backgroundImage: "url("+motCroisé+")"}}>
-          </div> */
-//comment lers bonbons haribo ont declenché la déforestation en Norvège

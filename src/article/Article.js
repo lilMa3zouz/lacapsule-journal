@@ -7,6 +7,7 @@ import HeaderPage from '../HeaderPage'
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
+var data = require("../data.json").data
 
 function scrollFun(){
     if($('#page')){
@@ -25,10 +26,12 @@ function scrollFun(){
   class Article extends React.Component{
     constructor(props){
       super(props)
-      console.log(decodeURI(this.props.content))
+      this.title = decodeURI(this.props.content)
+      console.log(this.title)
+      data = data.filter((month,idx) => month.url===this.title)[0]
       try{
         this.template = {
-          __html: require("../publication/"+decodeURI(this.props.content)+".html")
+          __html: require("../publication/"+decodeURI(data.html)+".html")
         }
       }
       catch(err){
@@ -36,12 +39,20 @@ function scrollFun(){
           __html: require('../publication/fallback.html')
         }
       }
-      this.title = this.props.content.split("-")
-      this.title = this.title.join(' ')
-
     }
     componentDidMount(){
-        document.title = decodeURI(this.title)
+        //document.title = this.title
+      }
+
+      isExisting(){
+        if(data.html!=="fallback"){
+          return(
+            <div>
+              <h1 style={{marginLeft:"30px",textAlign:"left",textDecoration:"underline"}}>{decodeURI(data.title)}</h1>
+              <p style={{width:"100%",textAlign:"center",marginTop:"30px"}}><img src={data.img} width="60%" style={{margin:"auto"}} alt="illustration" /></p>
+            </div>
+          )
+        }
       }
       render(){
         return(
@@ -49,7 +60,7 @@ function scrollFun(){
                 <HeaderPage />
                 <div id="content" className="container" onScroll={()=>scrollFun()}>
                   <div id='articleContainer' style={{boxShadow: theme.effects.elevation8}}>
-                    <h1 style={{marginLeft:"30px",textAlign:"left",textDecoration:"underline"}}>{decodeURI(this.title)}</h1>
+                    {this.isExisting()}
                     <div dangerouslySetInnerHTML={this.template}></div>
                 </div>
                 </div>

@@ -1,66 +1,91 @@
 {"data": [
     {
-    "img": "kaito-min.jpg",
+        "img": "https://image.noelshack.com/fichiers/2021/04/3/1611783651-motcroise.jpg",
+        "title": "correction du mot-croisé Animaux (numéro Octobre)",
+        "category": "Jeu",
+        "html":"correction mc octobre",
+        "function": "article",
+        "url": "correction-du-mot-croisé-Animaux-(numéro-Octobre)"
+    },
+    {
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611783651-kaito-min.jpg",
     "title": "Au fond de la pénombre - Kaïto Bernhart",
     "category": "audio",
     "html":"kaito",
-    "function": "bonus"    
+    "function": "bonus",
+    "url":"Au-fond-de-la-pénombre---Kaïto-Bernhart"
     },
     {
-    "img": "motcroisé.jpg",
-    "title": "correction du mot-croisé Animaux (numéro Octobre)",
-    "category": "Jeu",
-    "html":"correction mc octobre",
-    "function": "article"    
-    },
-    {
-    "img": "roro.jpg",
-    "title": "Vous ne n'entendrez plus les silences - Romane Ponton",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611783651-roro.jpg",
+    "title": "Vous n'entendrez plus les silences - Romane Ponton",
     "category": "audio",
     "html":"audioromane",
-    "function": "bonus"    
+    "function": "bonus",
+    "url": "Vous-n'entendrez-plus-les-silences---Romane-Ponton"  
     },
     {
-    "img": "sectionit.jpg",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611784399-sectionit-min.jpg",
     "title": "3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne",
     "category": "traduction",
     "html":"amirasectionit",
-    "function": "bonus"    
+    "function": "bonus",
+    "url": "3-des-nombreuses-raisons-pour-lesquelles-Ponto-à-besoin-de-la-section-italienne" 
     },
     {
-    "img": "sectionit.jpg",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611787236-etudiants.jpg",
+    "title": "ivre, iel s'inscrit par erreur au concours de version latin",
+    "category": "scolarité",
+    "html":"fallback",
+    "function": "article",
+    "url":"ivre,-iel-s'inscrit-par-erreur-au-concours-de-version-latin"
+    },
+    {
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611783651-bonbons.jpg",
+    "title": "Comment la production Haribo influence-t-elle la déforestation norvegienne",
+    "category": "dossier",
+    "html":"fallback",
+    "function": "article",
+    "url":"Comment-la-production-Haribo-influence-t-elle-la-déforestation-norvegienne"
+    },
+    {
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611784186-chibre.jpg",
     "title": "29 meilleures façons d'être le pire voisin",
     "category": "lifestyle",
     "html":"fallback",
-    "function": "article"    
+    "function": "article",
+    "url":"29-meilleures-façons-d'être-le-pire-voisin"
     },
     {
-    "img": "sectionit.jpg",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611784534-tarte.jpg",
     "title": "Une tarte volante au lycée",
     "category": "complotisme",
     "html":"fallback",
-    "function": "article"    
+    "function": "article",
+    "url": "Une-tarte-volante-au-lycée" 
     },
     {
-    "img": "sectionit.jpg",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611784487-mites-alimentaires-shutterstock-1328471456.png",
     "title": "Comment des mites ont infiltré la production des bredeles alsaciennes",
     "category": "cuisine",
     "html":"fallback",
-    "function": "article"    
+    "function": "article",
+    "url":"Comment-des-mites-ont-infiltré-la-production-des-bredeles-alsaciennes"
     },
     {
-    "img": "sectionit.jpg",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611783651-pasteque.jpg",
     "title": "Paf la pastèque!",
     "category": "jeu",
     "html":"fallback",
-    "function": "article"    
+    "function": "article",
+    "url": "Paf-la-pastèque!"
     },
     {
-    "img": "sectionit.jpg",
+    "img": "https://image.noelshack.com/fichiers/2021/04/3/1611783651-pieds.jpg",
     "title": "«le jour où j'ai perdu mes pieds»",
     "category": "récit",
-    "html":"amirasectionit",
-    "function": "article"    
+    "html":"fallback",
+    "function": "article",
+    "url": "«le-jour-où-j'ai-perdu-mes-pieds»"
     }
 
 ]}

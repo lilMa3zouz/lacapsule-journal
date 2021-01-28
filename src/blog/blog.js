@@ -2,26 +2,11 @@ import { getTheme } from '@fluentui/react'
 import './blogStyle.css'
 import React from 'react';
 import * as $ from 'jquery';
-import motCroisé from '../img/motcroisé.jpg'
 import HeaderPage from '../HeaderPage'
-import pasteque from '../img/pasteque.jpg'
-import pieds from '../img/pieds.jpg'
-import kaito from '../img/kaito-min.jpg'
-import amira from '../img/sectionit.jpg'
-import roro from '../img/roro.jpg'
 import FooterPage from '../footer/Footer';
-import { data } from 'jquery';
 
 require('bootstrap')
 const theme = getTheme();
-
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-  return images;
-}
-
-const images = importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/));
 
 function scrollFun(){
     if($('#page')){
@@ -56,19 +41,19 @@ function article(img,category,title){
 class Blog extends React.Component{
   constructor(props){
     super(props)
-    this.data = require("../data.json").data
+      this.data = require("../data.json").data
   }
   componentDidMount(){
     document.title = "La Capsule - Blog"
   }
 
-  __article(key){
+  article(key){
     var words=this.data[key].title.split(" ")
     var href= "./blog/"+words.join("-")
-    var imgPath = "../img/bar.png"
+    var img = this.data[key].img
     return(
       <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
-        <img class="articleImg" src={"../img/kaito-min.jpg"}  alt="article img" width="100%" />
+        <img class="articleImg" src={img}  alt="article img" width="100%" />
         <div class="articleBody">
           <p class="category">{this.data[key].category}</p>
           <a href={href}><p className="articleTitle">{this.data[key].title}</p></a>
@@ -84,19 +69,19 @@ render(){
         <div id="content" class="container">
             <div className="col-sm" id="blogCol">  
               <div className="row blogRow" style={{marginTop: "0px"}}>
-                {this.__article(2)}
-                {article(kaito,"Audio","Au fond de la pénombre - Kaïto Bernhart")}
-                {article(amira,"traduction","3 des nombreuses raisons pour lesquelles Ponto à besoin de la section italienne")}
+                {this.article(0)}
+                {this.article(1)}
+                {this.article(2)}
               </div>
               <div className="row blogRow">
-                {article(roro,"Audio","Vous ne n'entendrez plus les silences - Romane Ponton")}
-                {article("https://img-9gag-fun.9cache.com/photo/aYby7nv_460s.jpg","lifestyle","29 meilleures façons d'être le pire voisin")}
-                {article("https://i1.wp.com/harrysbarwigan.com/wp-content/uploads/2016/12/pie-in-space.jpg?fit=1200%2C630&ssl=1","random","Une tarte volante au lycée")}
+                {this.article(3)}
+                {this.article(6)}
+                {this.article(7)}
               </div>
               <div className="row blogRow">
-                {article("https://www.consoglobe.com/wp-content/uploads/2019/09/mites-alimentaires_shutterstock_1328471456.png","cuisine","Comment des mites ont infiltré la production des bredeles alsaciennes")}
-                {article(pasteque,"Jeu","Paf la pastèque!")}
-                {article(pieds,"Récit","«le jour où j'ai perdu mes pieds»")}
+                {this.article(8)}
+                {this.article(9)}
+                {this.article(10)}
               </div>
             </div>
         </div>

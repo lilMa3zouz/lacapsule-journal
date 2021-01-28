@@ -20,7 +20,7 @@ h1{
 #lastNumberCarousel{
     background-color: white;
     margin-left: 35px;
-    width: 98%;
+    width: 95%;
 }
 #bonusBar{
     width: 29%;
@@ -54,7 +54,7 @@ h1{
 
 .articleImg2{
     width: 100%;
-    height: 180px;
+    height: 250px;
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
@@ -72,5 +72,11 @@ h1{
     }
     #bonusBar{
     width: 33%;
-}
+    }
+    .articleImg2{
+        height: 180px;
+    }
+    .articleBody{
+        height: 120px;
+    }
 }
