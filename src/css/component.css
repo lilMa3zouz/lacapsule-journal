@@ -15,10 +15,7 @@
     max-width: 1700px;
     margin-bottom: 40px;
 }
-.articleImg{
-    margin-top: 0;
-    margin-left: 0;
-}
+
 .articleBody{
     margin-left: 10px;
     margin-right: 10px;
@@ -32,7 +29,7 @@
     text-align: left;
 }
 .articleTitle{
-    font-size: 15px;
+    font-size: 22px;
     margin-top: -10px;
     color: black;
 }

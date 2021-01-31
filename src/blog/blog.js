@@ -19,7 +19,7 @@ function scrollFun(){
       }
     }
   }
-
+  
   function detectMob() {
     const toMatch = [
         /Android/i,
@@ -41,9 +41,9 @@ function article(img,category,title){
     var href= "./blog/"+words.join("-")
     return(
       <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
-        <img className="articleImg" src={img}  alt="article img" width="100%" />
-        <div className="articleBody">
-          <p className="category">{category}</p>
+        <img class="articleImg" src={img}  alt="article img" width="100%" />
+        <div class="articleBody">
+          <p class="category">{category}</p>
           <a href={href}><p className="articleTitle">{title}</p></a>
         </div>
       </div>
@@ -61,6 +61,7 @@ class Blog extends React.Component{
     document.title = "La Capsule - Blog"
     if(detectMob()){
       require('./blogStyleMobile.css')
+
     }
     else{
       require('./blogStyle.css')
@@ -72,10 +73,10 @@ class Blog extends React.Component{
     var href= "./blog/"+words.join("-")
     var img = this.data[key].img
     return(
-      <div className="article component" style={{boxShadow: theme.effects.elevation16}}>
-        <img className="articleImg" src={img}  alt="article img" width="100%" />
-        <div className="articleBody">
-          <p className="category">{this.data[key].category}</p>
+      <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
+        <img class="articleImg" src={img}  alt="article img" width="100%" />
+        <div class="articleBody">
+          <p class="category">{this.data[key].category}</p>
           <a href={href}><p className="articleTitle">{this.data[key].title}</p></a>
         </div>
       </div>
@@ -87,8 +88,8 @@ render(){
       return(
         <div id="page"  onScroll={scrollFun}>
         <HeaderPage />
-        <div id="content" className="container">
-            <div id="blogCol">  
+        <div id="content" class="container">
+            <div className="col-sm" id="blogCol">  
                 {this.article(0)}
                 {this.article(1)}
                 {this.article(2)}
@@ -109,7 +110,7 @@ render(){
       return(
         <div id="page"  onScroll={scrollFun}>
         <HeaderPage />
-        <div id="content" className="container">
+        <div id="content" class="container">
             <div className="col-sm" id="blogCol">  
               <div className="row blogRow" style={{marginTop: "0px"}}>
                 {this.article(0)}

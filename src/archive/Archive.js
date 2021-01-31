@@ -9,10 +9,7 @@ import octobre from '../cover/octobre.png'
 import pilote from '../cover/pilote.png'
 import janvier from '../cover/janvier.png'
 import FooterPage from '../footer/Footer';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
 
-Modal.setAppElement('#root')
 
 
 require('bootstrap')// eslint-disable-next-line
@@ -124,7 +121,7 @@ class Archive extends React.Component{
             <div id="popup">
               <button id="quit" onClick={()=>{this.setState({isOpen:false})}} style={{boxShadow:theme.effects.elevation64}} >X</button>
               <p id="popupCover">
-              <img style={{boxShadow:theme.effects.elevation16}} src={this.state.announcerCover} width="45%" />
+              <img style={{boxShadow:theme.effects.elevation16}} alt="couverture du numéro" src={this.state.announcerCover} width="45%" />
               <br/>
               {this.state.announcerDate}
               <br/>

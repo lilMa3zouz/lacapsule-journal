@@ -10,8 +10,9 @@ import Article from './article/Article'
 import Archive from './archive/Archive'
 import Presentation from './presentation/Presentation'
 import Contact from './contact/Contact'
+import Download from './download'
+
 import Fallback from './Fallback'
-import HeaderPage from './HeaderPage'
 
 
 let routes = {
@@ -22,7 +23,7 @@ let routes = {
   '/archives/:id': ({id}) => <Archive content={id}/>,
   '/aboutus': () => <Presentation />,
   '/contact': () => <Contact />,
-  '/test': () => <HeaderPage />
+  '/file/:id': ({id}) => <Download path={id} />  
 }
 
 const Root = ()=>{

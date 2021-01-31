@@ -1,6 +1,6 @@
 #blogCol{
-    margin-left: -10px;
-    margin-right: 10px;
+    margin: auto;
+    margin-top: -20px;
 }
 .blogRow{
     margin-top: 100px;
@@ -11,12 +11,12 @@
     width: 100%;    
 }
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
-    .blogRow{
-        margin-top: 50px;
-    }
-    .articleImg{
-        height:250px
-    }
-
+.article{
+    width: 90%;
+}
+.articleTitle{
+    font-size: 15px;
+}
+.category{
+    font-size: 18px;
 }
