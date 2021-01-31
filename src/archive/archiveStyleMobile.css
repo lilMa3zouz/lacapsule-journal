@@ -1,0 +1,178 @@
+*{
+    outline: none !important;   
+}
+#popup{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid grey;
+    position: fixed;
+    top: 10px;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    overflow: hidden;
+    z-index: 10000;
+}
+#announcerDate{
+    font-size: 50px;
+    font-weight: bold;
+}
+#sommaireTitle{
+    font-size: 30px;
+}
+#quit{
+    border-radius: 100%;
+    height: 35px;
+    color: white;
+    border: none;
+    background-color: #787878;
+    width: 35px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+#quit:active{
+    transform: scale(0.95);
+
+}
+#popupCover{
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 30px;
+}
+#popupContent{
+    position: absolute;
+    background-color: #dbdbdb;
+    top: 35%;
+    bottom: 0;
+    padding-top: 40%;
+    padding-left: 20px;
+    padding-right: 20px;
+    left: 0;
+    right: 0;
+}
+#resume{
+    position: absolute;
+    top: 55%;
+    background-color: skyblue;
+    left: 5px;
+    right: 5px;
+    background-color: whitesmoke;
+    margin-top: 20px;
+    overflow: scroll;
+    z-index: 11000;
+    padding-top: 2px;
+    bottom: 2px;
+    border-radius: 5px;
+    border: 1px solid grey;
+
+
+}
+#content2{
+    z-index: 900;
+    font-size: 40px;
+    height: 200%;
+    margin: auto;
+    margin-top: 15px;
+    max-width: none
+}
+#resume::-webkit-scrollbar {
+    width: 10px;
+    margin-left: 20px;
+  }
+  #resume::-webkit-scrollbar-track {
+    border-radius: 15px;
+  }
+  #resume::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 15px;
+  }
+  #resume::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+#announcer{
+    background-color: #EDEDED;
+    height: 30%;
+    width: 100%;
+    margin-top: -70px;
+    margin-left: 0;
+    margin-right: 0;
+}
+#archiveList{
+    margin: auto;
+    height: 100%;
+    margin-top: 0;
+    background-color: white;
+    box-shadow: 0px 1px 5px black;
+
+}
+#archiveInner{
+    text-align: center;
+    margin: auto;
+
+    
+}
+.preview{
+    width: 120px;
+    box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
+}
+.numberTitle{
+    font-size: 22px;
+    color: black;
+
+}
+.numberTitle:hover{
+    color: black;
+}
+#announcerContent{
+    height: 80%;
+    margin: auto;
+    max-width: 1200px;
+    border: none;
+
+}
+#announcerCover{
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+
+}
+#sommaire{
+    font-size: 25px;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: whitesmoke;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid grey;
+    height: 50%;
+    overflow-x: visible;
+    overflow-y: scroll;
+}
+.downloadButton{
+    font-size: 22.5px;
+    height: 15%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    background-color: #fefefe;
+    outline: none;
+}
+.downloadButton:hover{
+    transform: scale(1.03);
+}
+.downloadButton:active{
+    transform: scale(0.99);
+}
+.numberTitle{
+    margin-top: 15px;
+}
+.numberTitle:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

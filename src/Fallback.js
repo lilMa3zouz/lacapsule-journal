@@ -28,7 +28,7 @@ render(){
     return(
         <div id="page"  onScroll={scrollFun}>
         <HeaderPage />
-        <div id="content2" class="container">
+        <div id="content2" className="container">
 
         </div>
       </div>

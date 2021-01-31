@@ -66,14 +66,30 @@ function lastCarousel() {
   )
 }
 
+function detectMob() {
+  const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+  ];
+
+  return toMatch.some((toMatchItem) => {
+      return navigator.userAgent.match(toMatchItem);
+  });
+}
+
 function bonus(key){
   var words=data[key].title.split(" ")
     var href= "./blog/"+words.join("-")
   return(
-    <div class="bonus container">
-      <div class="bonusBody container col">
-        <img src={data[key].img} alt="" class="bonusImg" style={{boxShadow:theme.effects.elevation64}}></img>
-        <a href={href}><p className="bonusTitle">{data[key].title}</p></a>
+    <div className="bonus container">
+      <div className="bonusBody container col">
+        <img src={data[key].img} alt="" className="bonusImg" style={{boxShadow:theme.effects.elevation64}}></img>
+        <div class="bonusTitleDiv"><p class="bonusTitleP"><a href={href} className="bonusTitle">{data[key].title}</a></p></div>
       </div>
     </div>
   )
@@ -85,9 +101,9 @@ function article2(key){
   var img = data[key].img
   return(
     <div className="col-sm article component" style={{boxShadow: theme.effects.elevation8}}>
-      <img class="articleImg2" src={img}  alt="article img" width="100%" />
-      <div class="articleBody">
-        <p class="category2">{data[key].category}</p>
+      <img className="articleImg2" src={img}  alt="article img" width="100%" />
+      <div className="articleBody">
+        <p className="category2">{data[key].category}</p>
         <a href={href}><p className="articleTitle">{data[key].title}</p></a>
       </div>
     </div>
@@ -105,34 +121,72 @@ class Home extends React.Component{
         bonusList.push(bonus(data.indexOf(element)))
       }
     })
-    articleList = articleList.filter((month,idx) => idx < 3)
-    bonusList = bonusList.filter((month,idx) => idx < 4)
+    if(detectMob()){
+      articleList = articleList.filter((month,idx) => idx < 4)
+      bonusList = bonusList.filter((month,idx) => idx < 4)
+    }
+    else{
+      articleList = articleList.filter((month,idx) => idx < 3)
+      bonusList = bonusList.filter((month,idx) => idx < 4)
+    }
 
 
   }
   componentDidMount(){
     document.title = "La Capsule"
-  }
+    if(detectMob()){
+      require('./homeStyleMobile.css')
+    }
+    else{
+      require('./homeStyle.css')
+    }  }
   
 render(){
-    return(
-    <div id="page"  onScroll={scrollFun}>
-        <HeaderPage />
-      <div id="content" class="container row">
-          <div className="col-sm">
-            {lastCarousel()}
-            <div className="row" style={{marginLeft:"20px",width:"96%",marginTop:"20px"}}>
-            {articleList}
-            </div>
+    if(detectMob()){
+      return(
+        <div id="page"  onScroll={scrollFun}>
+            <HeaderPage />
+          <div id="content" className="container row">
+              <div className="col-sm">
+                {lastCarousel()}
+                <div className="row" style={{width:"96%",marginTop:"20px"}}>
+                {articleList[0]}
+                {articleList[1]}
+                </div>
+                <div className="row" style={{width:"96%",marginTop:"20px"}}>
+                {articleList[2]}
+                {articleList[3]}
+                </div>
+              </div>
+              <div id="bonusBar" className="col-mb-auto " style={{boxShadow: theme.effects.elevation16}}>
+                <h1 style={{width:"100%",borderBottom: "3px solid black",marginTop:"15px", paddingBottom:"15px"}}>Bonus</h1>
+                {bonusList}
+              </div>
           </div>
-          <div id="bonusBar" className="col-mb-auto " style={{boxShadow: theme.effects.elevation16}}>
-            <h1 style={{width:"100%",borderBottom: "3px solid black",marginTop:"15px", paddingBottom:"15px"}}>Bonus</h1>
-            {bonusList}
+            <FooterPage/>
+        </div>
+        )
+    }
+    else{
+      return(
+        <div id="page"  onScroll={scrollFun}>
+            <HeaderPage />
+          <div id="content" className="container row">
+              <div className="col-sm">
+                {lastCarousel()}
+                <div className="row" style={{marginLeft:"20px",width:"96%",marginTop:"20px"}}>
+                {articleList}
+                </div>
+              </div>
+              <div id="bonusBar" className="col-mb-auto " style={{boxShadow: theme.effects.elevation16}}>
+                <h1 style={{width:"100%",borderBottom: "3px solid black",marginTop:"15px", paddingBottom:"15px"}}>Bonus</h1>
+                {bonusList}
+              </div>
           </div>
-      </div>
-        <FooterPage/>
-    </div>
-    )
+            <FooterPage/>
+        </div>
+        )
+    }
 }
 }
 

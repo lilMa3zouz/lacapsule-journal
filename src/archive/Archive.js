@@ -4,18 +4,35 @@ import FileSaver from 'file-saver';
 import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
-import './archiveStyle.css'
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import pilote from '../cover/pilote.png'
 import janvier from '../cover/janvier.png'
 import FooterPage from '../footer/Footer';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root')
 
 
 require('bootstrap')// eslint-disable-next-line
 const theme = getTheme();
 
+function detectMob() {
+  const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+  ];
 
+  return toMatch.some((toMatchItem) => {
+      return navigator.userAgent.match(toMatchItem);
+  });
+}
 
 function scrollFun(){ 
 
@@ -57,21 +74,40 @@ let archives = {
 
   
 class Archive extends React.Component{
+
+  
     constructor(props){
       super(props)
       this.state = {
         announcerDate: "n° Pilote",
         announcerContent: "Le numéro pilote porte en lui la vocation intrinsèque du fascicule miteux qui traîne depuis des lustres dans la salle d’attente bondée de nos médecins généralistes, entre le gel hydroalcoolique et les magazines ELLE parus en 2012. En cette période de crise sanitaire, les experts déconseillent fortement de s’exposer à la salive d’individus venus consulter leurs précieuses revues (même quand c’est avec la ferveur/dévotion des lectures psalmodiques du dimanche), ceux-là qui tournent les pages du bout d’un doigt humide. Ainsi, pour éviter tout risque de contamination, nous apportons à domicile la frénésie qui manque à votre vie aseptisée. A défaut de contenir des anecdotes inédites sur la vie de couple de Cristiano Ronaldo, La Capsule zéro vous offrira poésie futile, mots croisés facétieux et si vos yeux sont baladeurs, évènement clandestin estival.",
         announcerCover: pilote,
-        number: "pilote"
+        number: "pilote",
+        isOpen: false
       }
     }
+
+
+
     componentDidMount(){
         document.title = "La Capsule - Archives"
-
+        if(this.props.content){
+          this.__updateContent(this.props.content)
+      }
+        if(detectMob()){
+          require('./archiveStyleMobile.css')
+        }
+        else{
+          require('./archiveStyle.css')
+        }
       }
 
     __updateContent(id){
+      if(detectMob()){
+        this.setState({
+          isOpen: true
+        })
+      }
       let content = archives[id]
       this.setState({
         "announcerDate": content.announcerDate,
@@ -80,14 +116,62 @@ class Archive extends React.Component{
         "number": content.announcerDate.split(" - ")[0].split("n° ")[1]
       })
     }
-    componentDidMount(){
-      if(this.props.content){
-          this.__updateContent(this.props.content)
-      }
-
-    }
     render(){
-        return(
+        if(detectMob()){
+          return(
+            <div id="page"  onScroll={scrollFun}>
+            {this.state.isOpen && 
+            <div id="popup">
+              <button id="quit" onClick={()=>{this.setState({isOpen:false})}} style={{boxShadow:theme.effects.elevation64}} >X</button>
+              <p id="popupCover">
+              <img style={{boxShadow:theme.effects.elevation16}} src={this.state.announcerCover} width="45%" />
+              <br/>
+              {this.state.announcerDate}
+              <br/>
+              <button className="downloadButton" onClick={()=>{FileSaver.saveAs(process.env.PUBLIC_URL + "/numbers/"+this.state.number+".pdf","la capsule n°"+this.state.number+".pdf");;}}> lire en PDF</button>
+              </p>
+              <div id="popupContent" style={{boxShadow:theme.effects.elevation16}}>
+              </div>
+              <div id="resume">
+                {this.state.announcerContent}
+                </div>
+
+            </div>
+            }
+            <HeaderPage/>
+            <div id="content2" className="container">
+              <div id="archiveInner">
+                <h3 style={{textDecoration:"underline"}}>Toutes les éditions de La Capsule</h3>
+                <div className="row" style={{margin: 'auto',width: '100%',marginTop:"20px"}}>
+                  <div className="col">
+                    <img className='preview'  src={pilote} alt="numéro pilote"/><br />
+                    <p className="numberTitle" onClick={()=>{this.setState({isOpen:true});this.__updateContent(0)}}>n° Pilote</p>
+                    
+                  </div>
+                  <div className="col">
+                    <img className='preview' src={octobre} alt="numéro octobre"/><br />
+                    <p className="numberTitle" onClick={()=>{this.setState({isOpen:true});this.__updateContent(1)}}>n° 1 - Octobre</p>
+                  </div>
+                </div>
+                <div className="row" style={{margin: 'auto',width: '100%'}}>
+                  <div className="col">
+                     <img className='preview' src={novembre} alt="numéro novembre"/><br />
+                      <p className="numberTitle" onClick={()=>{this.setState({isOpen:true});this.__updateContent(2)}}>n°2 - Novembre</p>
+                  </div>
+                  <div className="col">
+                      <img className='preview' src={novembre} alt="numéro novembre"/><br />
+                      <p className="numberTitle" onClick={()=>{this.setState({isOpen:true});this.__updateContent(3)}}>n°3 - Hiver</p>
+                  </div>
+                </div>
+                    </div>
+            </div>
+                    <FooterPage/>
+
+          </div>
+        )
+        }
+        else{
+          return(
             <div id="page"  onScroll={scrollFun}>
             <HeaderPage/>
             <div id="content2" className="container">
@@ -99,7 +183,7 @@ class Archive extends React.Component{
                       <div id="sommaire" className="row" style={{boxShadow: theme.effects.elevation16}}>
                         {this.state.announcerContent}
                       </div>
-                      <button id="downloadButton" onClick={()=>{FileSaver.saveAs(process.env.PUBLIC_URL + "/numbers/"+this.state.number+".pdf","la capsule n°"+this.state.number+".pdf");;}}> lire en PDF</button>
+                      <button className="downloadButton" onClick={()=>{FileSaver.saveAs(process.env.PUBLIC_URL + "/numbers/"+this.state.number+".pdf","la capsule n°"+this.state.number+".pdf");;}}> lire en PDF</button>
                   </div>
                 </div>
                 <div id="archiveList" >
@@ -131,6 +215,7 @@ class Archive extends React.Component{
 
           </div>
         )
+        }
     }
 }
 export default Archive

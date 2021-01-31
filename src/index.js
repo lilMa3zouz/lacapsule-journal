@@ -11,6 +11,8 @@ import Archive from './archive/Archive'
 import Presentation from './presentation/Presentation'
 import Contact from './contact/Contact'
 import Fallback from './Fallback'
+import HeaderPage from './HeaderPage'
+
 
 let routes = {
   '/': () => <Home />,
@@ -19,7 +21,8 @@ let routes = {
   '/archives': () => <Archive/>,
   '/archives/:id': ({id}) => <Archive content={id}/>,
   '/aboutus': () => <Presentation />,
-  '/contact': () => <Contact />
+  '/contact': () => <Contact />,
+  '/test': () => <HeaderPage />
 }
 
 const Root = ()=>{

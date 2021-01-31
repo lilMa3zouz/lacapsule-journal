@@ -32,7 +32,8 @@
     text-align: left;
 }
 .articleTitle{
-    font-size: 20px;
+    font-size: 15px;
+    margin-top: -10px;
     color: black;
 }
 .articleTitle:hover{

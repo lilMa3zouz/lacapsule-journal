@@ -1,5 +1,4 @@
 import { getTheme } from '@fluentui/react'
-import './presentationStyle.css'
 import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
@@ -21,16 +20,35 @@ function scrollFun(){
         }
       }
   }
-
   
+  function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
   
-
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+  }
 
 
   class Presentation extends React.Component{
 
       componentDidMount(){
+        if(detectMob()){
+          require('./presentationStyleMobile.css')
+        }
+        else{
+          require('./presentationStyle.css')
+        }  
         document.title = "La Capsule - Présentation";
+        
         let stack = document.querySelector(".stack");
         [...stack.children].reverse().forEach(i => stack.append(i));
         stack.addEventListener("click", function(e){
@@ -42,7 +60,6 @@ function scrollFun(){
             stack.prepend(card);
           }, 700);
         });
-        
       }
       render(){
         return(
@@ -64,7 +81,7 @@ function scrollFun(){
                             <p>
                             </p>
                         </div>
-                        <div class="stack">
+                        <div className="stack">
                         <div className="presentation card" >
                                 <div className="imageHolder"><img src={romane} alt="Hanae"/></div>
                                 <p className="name">ROMANE PONTON</p>

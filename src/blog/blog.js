@@ -1,5 +1,4 @@
 import { getTheme } from '@fluentui/react'
-import './blogStyle.css'
 import React from 'react';
 import * as $ from 'jquery';
 import HeaderPage from '../HeaderPage'
@@ -20,16 +19,31 @@ function scrollFun(){
       }
     }
   }
+
+  function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
   
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+  }
 
 function article(img,category,title){
     var words=title.split(" ")
     var href= "./blog/"+words.join("-")
     return(
       <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
-        <img class="articleImg" src={img}  alt="article img" width="100%" />
-        <div class="articleBody">
-          <p class="category">{category}</p>
+        <img className="articleImg" src={img}  alt="article img" width="100%" />
+        <div className="articleBody">
+          <p className="category">{category}</p>
           <a href={href}><p className="articleTitle">{title}</p></a>
         </div>
       </div>
@@ -45,6 +59,12 @@ class Blog extends React.Component{
   }
   componentDidMount(){
     document.title = "La Capsule - Blog"
+    if(detectMob()){
+      require('./blogStyleMobile.css')
+    }
+    else{
+      require('./blogStyle.css')
+    }
   }
 
   article(key){
@@ -52,10 +72,10 @@ class Blog extends React.Component{
     var href= "./blog/"+words.join("-")
     var img = this.data[key].img
     return(
-      <div className="col-sm article component" style={{boxShadow: theme.effects.elevation16}}>
-        <img class="articleImg" src={img}  alt="article img" width="100%" />
-        <div class="articleBody">
-          <p class="category">{this.data[key].category}</p>
+      <div className="article component" style={{boxShadow: theme.effects.elevation16}}>
+        <img className="articleImg" src={img}  alt="article img" width="100%" />
+        <div className="articleBody">
+          <p className="category">{this.data[key].category}</p>
           <a href={href}><p className="articleTitle">{this.data[key].title}</p></a>
         </div>
       </div>
@@ -63,10 +83,33 @@ class Blog extends React.Component{
   }
 
 render(){
-    return(
+    if(detectMob()){
+      return(
         <div id="page"  onScroll={scrollFun}>
         <HeaderPage />
-        <div id="content" class="container">
+        <div id="content" className="container">
+            <div id="blogCol">  
+                {this.article(0)}
+                {this.article(1)}
+                {this.article(2)}
+                {this.article(3)}
+                {this.article(6)}
+                {this.article(7)}
+                {this.article(8)}
+                {this.article(9)}
+                {this.article(10)}
+            </div>
+        </div>
+                <FooterPage/>
+
+      </div>
+    )
+    }
+    else{
+      return(
+        <div id="page"  onScroll={scrollFun}>
+        <HeaderPage />
+        <div id="content" className="container">
             <div className="col-sm" id="blogCol">  
               <div className="row blogRow" style={{marginTop: "0px"}}>
                 {this.article(0)}
@@ -89,6 +132,7 @@ render(){
 
       </div>
     )
+    }
 }
 }
 export default Blog
