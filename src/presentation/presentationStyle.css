@@ -1,10 +1,9 @@
 #container{
-    max-width: 1700px;
     background-color: white;
     margin: auto;
     padding: 25px;
-    height: 20000px;
-    min-height: 1500px;
+    height: 1500px;
+    min-width: 1600px;
 }
 #text{
     font-size: 30px;
@@ -43,7 +42,7 @@ div + p{
     box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
 }
 #conclusion{
-    top : 700px;
+    top : 900px;
     position: relative;
     font-size: 30px;
     margin-left: 40px;
@@ -96,8 +95,8 @@ div + p{
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
     #container{
-        min-height: 1200px;
-
+        min-width: 1200px;
+        height: 1300px;
     }
     #text{
         font-size: 22px;
@@ -122,5 +121,8 @@ div + p{
     .stack{
         position: relative;
         top: 300px;
+    }
+    #conclusion{
+        top: 700px;
     }
 }

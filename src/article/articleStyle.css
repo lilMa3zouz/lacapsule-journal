@@ -3,10 +3,29 @@
     background-color: white;
     padding: 25px;
 }
+#subtitles{
+    width: 100%;
+    text-align: left;
+}
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
     #articleContainer{
         max-width: 1300px;
         margin-left: 25px;
     }
-
+}
+.normal{
+    font-size: 35px;
+}
+ol{
+    font-size: 25px;
+}
+.pdf{
+    width: 70%;
+}
+#miniature{
+    width: 60%;
+}
+#bigTitle{
+    margin-left:30px;
+    text-align: left;
 }

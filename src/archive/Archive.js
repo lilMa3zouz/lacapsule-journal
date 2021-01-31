@@ -6,7 +6,7 @@ import React from 'react';
 import * as $ from 'jquery';
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
-import pilote from '../cover/pilote.png'
+import pilote from '../cover/pilote.jpg'
 import janvier from '../cover/janvier.png'
 import FooterPage from '../footer/Footer';
 
@@ -156,7 +156,7 @@ class Archive extends React.Component{
                       <p className="numberTitle" onClick={()=>{this.setState({isOpen:true});this.__updateContent(2)}}>n°2 - Novembre</p>
                   </div>
                   <div className="col">
-                      <img className='preview' src={novembre} alt="numéro novembre"/><br />
+                      <img className='preview' src={janvier} alt="numéro novembre"/><br />
                       <p className="numberTitle" onClick={()=>{this.setState({isOpen:true});this.__updateContent(3)}}>n°3 - Hiver</p>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ class Archive extends React.Component{
                               <p className="numberTitle" onClick={()=>{this.__updateContent(2)}}>n°2 - Novembre</p>
                             </div>
                             <div className="col-sm">
-                              <img className='preview' src={novembre} alt="numéro novembre"/><br />
+                              <img className='preview' src={janvier} alt="numéro novembre"/><br />
                               <p className="numberTitle" onClick={()=>{this.__updateContent(3)}}>n°3 - Hiver</p>
                             </div>
                         </div>

@@ -2,7 +2,7 @@
     background-color: white;
     margin: auto;
     padding: 10px;
-    height: 20000px;
+    height: 2000px;
     margin-left: 10px;
     margin-right: 10px;    
 }
@@ -17,8 +17,8 @@ div + p{
 
 .imageHolder{
     border-radius: 100%;
-    width:  150px;
-    height: 150px;
+    width:  200px;
+    height: 200px;
     overflow: hidden;
     margin: auto;
     margin-top: 10px;
@@ -28,28 +28,29 @@ div + p{
     text-align: center;
     font-size: 20px;
 }
+.presentationImg{
+    width: 100%;
+}
 .description{
     font-size: 15px;
     text-align: center;
 }
 .presentation{
-    height: 500px;
+    height: 650px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18);
 }
 #conclusion{
-    top : 700px;
+    top : 750px;
     position: relative;
-    font-size: 30px;
-    margin-left: 40px;
-    margin-right: 40px;
+    font-size: 22px;
     text-align: center;
 
 }
 .stack{
     position: relative;
-    top: 400px;
+    top: 320px;
 }
   .card {
     width: 90%;
@@ -89,33 +90,3 @@ div + p{
       z-index: -1;
     }
   }
-
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
-    #container{
-        min-height: 1200px;
-
-    }
-    #text{
-        font-size: 22px;
-    }
-    #personnal{
-    height: 20%;
-    }
-    .description{
-    font-size: 18px;
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    }
-    .imageHolder{
-        width: 250px;
-        height: 250px;
-    }
-    .presentation{
-        height: 600px;
-    }
-    .stack{
-        position: relative;
-        top: 300px;
-    }
-}

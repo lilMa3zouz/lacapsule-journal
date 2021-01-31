@@ -111,13 +111,21 @@
         right: 20px;
 }
 
-
+.category2{
+    font-size: 25px;
+    text-decoration: underline;
+    color: grey;
+    width: 100%;
+    text-align: left;
+}
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
 .imgHeader{
     width: 100%;
 }
-
+.category2{
+    font-size: 20px;
+}
 #stickyheader{
     height: 15%;
 }

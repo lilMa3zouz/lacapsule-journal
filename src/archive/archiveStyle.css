@@ -111,7 +111,14 @@
     overflow-x: visible;
     overflow-y: scroll;
 }
-#downloadButton{
+.numberTitle{
+    margin-top: 15px;
+}
+.numberTitle:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.downloadButton{
     margin-top: 20px;
     width: 30%;
     height: 15%;
@@ -119,16 +126,9 @@
     background-color: #fefefe;
     outline: none;
 }
-#downloadButton:hover{
+.downloadButton:hover{
     transform: scale(1.03);
 }
-#downloadButton:active{
+.downloadButton:active{
     transform: scale(0.99);
-}
-.numberTitle{
-    margin-top: 15px;
-}
-.numberTitle:hover{
-    text-decoration: underline;
-    cursor: pointer;
 }

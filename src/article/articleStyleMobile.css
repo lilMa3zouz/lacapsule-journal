@@ -1,0 +1,37 @@
+#articleContainer{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    padding: 3px;
+    margin-top: -20px;
+    height: auto;
+}
+#subtitles{
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 5px;
+}
+.normal{
+    font-size: 20px;
+}
+.illustration{
+    width: 70%;
+}
+ol{
+    font-size: 15px;
+}
+.pdf{
+    width: 95%;
+}
+#miniature{
+    width: 95%;
+}
+#paragraphe{
+    width: 100%;
+    text-align: center;
+}
+#bigTitle{
+    font-size: 22px;
+    text-align: center;
+}

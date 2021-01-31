@@ -85,3 +85,9 @@ h1{
     width: 100%;
     height: 130px;
 }
+.articleTitle{
+    font-size: 15px;
+}
+.category{
+    font-size: 18px;
+}

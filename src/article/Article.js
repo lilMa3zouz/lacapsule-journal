@@ -1,8 +1,8 @@
-import { getTheme } from '@fluentui/react'
-import './articleStyle.css'
+import { getTheme } from '@fluentui/react' 
 import React from 'react';
 import * as $ from 'jquery';
 import HeaderPage from '../HeaderPage'
+import FooterPage from '../footer/Footer';
 
 
 require('bootstrap')// eslint-disable-next-line
@@ -21,6 +21,21 @@ function scrollFun(){
         document.getElementById('stickyheader').classList.remove('sticky')
       }
     }
+  }
+  function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+  
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
   }
 
   class Article extends React.Component{
@@ -42,14 +57,30 @@ function scrollFun(){
     }
     componentDidMount(){
         //document.title = this.title
+        if(detectMob()){
+          require('./articleStyleMobile.css')
+
+        }
+        else{
+          require('./articleStyle.css')
+        }
+        if(!this.isExisting){
+          if(detectMob()){
+            require('../publication/fallbackStyleMobile.css')          
+          }
+          else{
+            require('../publication/fallbackStyle.css')
+  
+          }
+        }
       }
 
       isExisting(){
         if(data.html!=="fallback"){
           return(
             <div>
-              <h1 style={{marginLeft:"30px",textAlign:"left",textDecoration:"underline"}}>{decodeURI(data.title)}</h1>
-              <p style={{width:"100%",textAlign:"center",marginTop:"30px"}}><img src={data.img} width="60%" style={{margin:"auto"}} alt="illustration" /></p>
+              <h1 id="bigTitle" style={{textDecoration:"underline"}}>{decodeURI(data.title)}</h1>
+              <p style={{width:"100%",textAlign:"center",marginTop:"30px"}}><img src={data.img} style={{margin:"auto"}} alt="illustration" id="miniature" /></p>
             </div>
           )
         }
@@ -64,6 +95,7 @@ function scrollFun(){
                     <div dangerouslySetInnerHTML={this.template}></div>
                 </div>
                 </div>
+                <FooterPage />
             </div>
         )
       }
