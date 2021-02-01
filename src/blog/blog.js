@@ -2,7 +2,10 @@ import { getTheme } from '@fluentui/react'
 import React from 'react';
 import * as $ from 'jquery';
 import HeaderPage from '../HeaderPage'
+import {isMobile} from 'react-device-detect';
 import FooterPage from '../footer/Footer';
+var request = require('request');
+
 
 require('bootstrap')
 const theme = getTheme();
@@ -90,7 +93,7 @@ render(){
         <HeaderPage />
         <div id="content" class="container">
             <div className="col-sm" id="blogCol">  
-                {this.article(0)}
+                {this.article(0)} 
                 {this.article(1)}
                 {this.article(2)}
                 {this.article(3)}

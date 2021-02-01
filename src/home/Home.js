@@ -5,10 +5,13 @@ import './homeStyle.css';
 import HeaderPage from '../HeaderPage'
 import * as $ from 'jquery';
 import React from 'react';
+import {isMobile} from 'react-device-detect';
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import janvier from '../cover/janvier.png'
 import FooterPage from '../footer/Footer';
+var request = require('request');
+
 
 require('bootstrap')
 const theme = getTheme();
@@ -78,6 +81,7 @@ function detectMob() {
   ];
 
   return toMatch.some((toMatchItem) => {
+      console.log(navigator.userAgent)
       return navigator.userAgent.match(toMatchItem);
   });
 }

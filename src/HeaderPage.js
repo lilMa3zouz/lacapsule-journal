@@ -1,6 +1,7 @@
 import topBar from './img/bar.svg';
 import banner from './img/capsule2.png';
 import bannerMob from './img/capsuleMobile.png';
+import {isMobile} from 'react-device-detect';
 
 import titre from './img/titreHeader.svg';
 import './css/bootstrap.min.css';

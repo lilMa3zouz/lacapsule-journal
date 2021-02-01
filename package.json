@@ -20,6 +20,7 @@
     "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-audio-player": "^0.14.0",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^17.0.1",
     "react-modal": "^3.12.1",
     "react-popper": "^2.2.4",

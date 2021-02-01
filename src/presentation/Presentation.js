@@ -5,7 +5,9 @@ import * as $ from 'jquery';
 import romane from './agneau.png'
 import hanae from '../img/hanae2.png'
 import FooterPage from '../footer/Footer';
-require('bootstrap')// eslint-disable-next-line
+import {isMobile} from 'react-device-detect';
+require('bootstrap')// eslint-disable-next-line;
+
 const theme = getTheme();
 
 function scrollFun(){
