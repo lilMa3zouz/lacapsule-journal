@@ -9,6 +9,7 @@ import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import janvier from '../cover/janvier.png'
 import FooterPage from '../footer/Footer';
+import {isMobile} from 'react-device-detect';
 
 require('bootstrap')
 const theme = getTheme();
@@ -113,6 +114,7 @@ function article2(key){
 class Home extends React.Component{
   constructor(props){
     super(props)
+    console.log(isMobile)
     data.forEach(function(element){
       if(element.function === "article"){
         articleList.push(article2(data.indexOf(element)))
@@ -121,7 +123,7 @@ class Home extends React.Component{
         bonusList.push(bonus(data.indexOf(element)))
       }
     })
-    if(detectMob()){
+    if(isMobile){
       articleList = articleList.filter((month,idx) => idx < 4)
       bonusList = bonusList.filter((month,idx) => idx < 4)
     }
@@ -134,7 +136,7 @@ class Home extends React.Component{
   }
   componentDidMount(){
     document.title = "La Capsule"
-    if(detectMob()){
+    if(isMobile){
       require('./homeStyleMobile.css')
     }
     else{
@@ -142,7 +144,7 @@ class Home extends React.Component{
     }  }
   
 render(){
-    if(detectMob()){
+    if(isMobile){
       return(
         <div id="page"  onScroll={scrollFun}>
             <HeaderPage />
