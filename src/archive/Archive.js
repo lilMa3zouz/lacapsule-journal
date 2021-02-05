@@ -4,6 +4,7 @@ import FileSaver from 'file-saver';
 import HeaderPage from '../HeaderPage'
 import React from 'react';
 import * as $ from 'jquery';
+import {isMobile} from 'react-device-detect';
 import novembre from '../cover/novembre.png'
 import octobre from '../cover/octobre.png'
 import pilote from '../cover/pilote.jpg'

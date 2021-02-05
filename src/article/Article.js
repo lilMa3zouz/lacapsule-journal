@@ -1,6 +1,7 @@
 import { getTheme } from '@fluentui/react' 
 import React from 'react';
 import * as $ from 'jquery';
+import {isMobile} from 'react-device-detect';
 import HeaderPage from '../HeaderPage'
 import FooterPage from '../footer/Footer';
 

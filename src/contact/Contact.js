@@ -5,6 +5,7 @@ import React from 'react';
 import * as $ from 'jquery';
 import instagram from '../img/instagram.png'
 import gmail from '../img/gmail.png'
+import {isMobile} from 'react-device-detect';
 import FooterPage from '../footer/Footer';
 
 
